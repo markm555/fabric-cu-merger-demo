@@ -1,0 +1,7 @@
+UserUPN,RoleName,Region
+north_director@contoso.demo,RegionalDirector,North
+south_director@contoso.demo,RegionalDirector,South
+east_director@contoso.demo,RegionalDirector,East
+west_director@contoso.demo,RegionalDirector,West
+retail_exec@contoso.demo,Executive,ALL
+mgmt_analyst@contoso.demo,Analyst,ALL

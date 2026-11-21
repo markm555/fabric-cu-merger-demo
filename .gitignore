@@ -1,0 +1,11 @@
+# Power BI Desktop local files
+**/.pbi/localSettings.json
+**/.pbi/cache.abf
+*.pbix
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+# Never commit credentials or tenant notes
+*.secret
+users*.txt

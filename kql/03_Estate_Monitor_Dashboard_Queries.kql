@@ -1,0 +1,228 @@
+// =====================================================================================
+// Real-Time Estate Monitor: dashboard tile queries (generated from the dashboard JSON)
+// Use these to rebuild a tile by hand or paste into a KQL queryset.
+// _startTime and _endTime come from the dashboard's Time range parameter. To run a query
+// on its own, first run:  let _startTime = ago(1h); let _endTime = now();
+// =====================================================================================
+
+// ===== Page: Live operations =====
+
+// --- Capacity utilization now (%)  [visual: card]
+EstateCapacity(ago(15m))
+| summarize arg_max(WindowStart, UtilizationPct) by CapacityId
+| summarize UtilizationPct = max(UtilizationPct)
+
+// --- Capacity health  [visual: card]
+EstateCapacityState(ago(30d))
+| summarize arg_max(TransitionTime, CapacityState, Reason) by CapacityId
+| summarize Overloaded = countif(CapacityState =~ "Overloaded" or Reason in~ ("InteractiveDelay", "InteractiveRejection", "BackgroundRejection"))
+| project Status = iff(Overloaded > 0, strcat(Overloaded, " overloaded"), "Healthy")
+
+// --- Jobs running  [visual: card]
+EstateJobsLatest(ago(1d))
+| where Status == "InProgress"
+| count
+
+// --- Failed jobs and refreshes  [visual: card]
+EstateJobsLatest(_startTime)
+| where EventTime between (_startTime .. _endTime) and Status == "Failed"
+| count
+
+// --- Active users (15 min)  [visual: card]
+EstateActivity(ago(15m))
+| summarize Users = dcount(User)
+
+// --- Events per minute (5 min)  [visual: card]
+RawEvents
+| where ingestion_time() > ago(5m)
+| summarize EventsPerMinute = round(count() / 5.0, 1)
+
+// --- Capacity utilization, 30-second windows (%)  [visual: timechart]
+EstateCapacity(_startTime)
+| where WindowStart between (_startTime .. _endTime)
+| project WindowStart, CapacityName, UtilizationPct
+| order by WindowStart asc
+
+// --- Throttling pressure (% of limit; over 100 means throttling)  [visual: timechart]
+EstateCapacity(_startTime)
+| where WindowStart between (_startTime .. _endTime)
+| summarize InteractiveDelay = max(InteractiveDelayPct), InteractiveRejection = max(InteractiveRejectPct),
+            BackgroundRejection = max(BackgroundRejectPct) by WindowStart
+| order by WindowStart asc
+
+// --- Live job and refresh feed  [visual: table]
+EstateJobsLatest(_startTime)
+| where EventTime <= _endTime
+| order by EventTime desc
+| project EventTime, Status, ItemName, ItemKind, WorkspaceName, JobType, InvokeType, DurationSec, Origin, ErrorMessage
+| take 100
+
+// --- Jobs by status (5-minute buckets)  [visual: column]
+EstateJobsLatest(_startTime)
+| where StartTime between (_startTime .. _endTime)
+| summarize Jobs = count() by bin(StartTime, 5m), Status
+| order by StartTime asc
+
+// --- Top capacity consumers (capacity operation events)  [visual: table]
+EstateCapacityOperations(_startTime)
+| where EventTime between (_startTime .. _endTime)
+| summarize CUSeconds = round(sum(CUms) / 1000.0, 1), Operations = count(),
+            ThrottledOperations = countif(ThrottlingDelayMs > 0), Users = dcount(Identity)
+          by WorkspaceName, ItemName, ItemKind
+| top 15 by CUSeconds
+
+// --- Interactive vs background CU (seconds per 30s window)  [visual: area]
+EstateCapacity(_startTime)
+| where WindowStart between (_startTime .. _endTime)
+| summarize Interactive = sum(InteractiveCUms) / 1000.0, Background = sum(BackgroundCUms) / 1000.0 by WindowStart
+| order by WindowStart asc
+
+// ===== Page: Activity and security =====
+
+// --- Unique users  [visual: card]
+EstateActivity(_startTime)
+| where EventTime <= _endTime
+| summarize Users = dcount(User)
+
+// --- Views and queries  [visual: card]
+EstateActivity(_startTime)
+| where EventTime <= _endTime and Category == "Viewing and querying"
+| count
+
+// --- Copilot and AI interactions  [visual: card]
+EstateActivity(_startTime)
+| where EventTime <= _endTime and Category == "AI and Copilot"
+| count
+
+// --- Exports and downloads  [visual: card]
+EstateActivity(_startTime)
+| where EventTime <= _endTime and Category == "Export and download"
+| count
+
+// --- Access changes  [visual: card]
+EstateAccessChanges(_startTime)
+| where EventTime <= _endTime and Change != "Baseline"
+| count
+
+// --- Failed operations  [visual: card]
+EstateActivity(_startTime)
+| where EventTime <= _endTime and IsSuccess == false
+| count
+
+// --- Activity per minute by category  [visual: timechart]
+EstateActivity(_startTime)
+| where EventTime <= _endTime
+| summarize Events = count() by bin(EventTime, 1m), Category
+| order by EventTime asc
+
+// --- Most-used items  [visual: bar]
+EstateActivity(_startTime)
+| where EventTime <= _endTime and Category == "Viewing and querying" and isnotempty(ItemName)
+| summarize Views = count() by ItemName
+| top 10 by Views
+
+// --- Export and download watch (10 or more in the range is flagged)  [visual: table]
+EstateActivity(_startTime)
+| where EventTime <= _endTime and Category == "Export and download"
+| summarize Exports = count(), Items = dcount(ItemName), First = min(EventTime), Last = max(EventTime) by User
+| extend Flag = iff(Exports >= 10, "Investigate", "")
+| order by Exports desc
+
+// --- Copilot and AI activity  [visual: table]
+EstateActivity(_startTime)
+| where EventTime <= _endTime and Category == "AI and Copilot"
+| order by EventTime desc
+| project EventTime, User, Activity, ItemName, WorkspaceName
+| take 100
+
+// --- Workspace access changes  [visual: table]
+EstateAccessChanges(_startTime)
+| where EventTime <= _endTime and Change != "Baseline"
+| extend Attention = iff(Role == "Admin" and Change in ("Granted", "RoleChanged"), "New admin", "")
+| order by EventTime desc
+| project EventTime, Attention, Change, WorkspaceName, Principal, PrincipalType, Role, PreviousRole
+
+// --- Activity feed  [visual: table]
+EstateActivity(_startTime)
+| where EventTime <= _endTime
+| order by EventTime desc
+| project EventTime, User, Activity, Category, ItemName, WorkspaceName, ClientApp, IsSuccess
+| take 200
+
+// ===== Page: Inventory and change =====
+
+// --- Items  [visual: card]
+EstateInventory()
+| count
+
+// --- Workspaces  [visual: card]
+EstateWorkspaces()
+| where WorkspaceType !~ "Personal"
+| count
+
+// --- Changes in range  [visual: card]
+EstateItemChanges(_startTime)
+| where EventTime <= _endTime and Change != "Baseline"
+| count
+
+// --- Deletions in range  [visual: card]
+EstateItemChanges(_startTime)
+| where EventTime <= _endTime and Change == "Deleted"
+| count
+
+// --- Items by type  [visual: bar]
+EstateInventory()
+| summarize Items = count() by ItemKind
+| top 15 by Items
+
+// --- Change feed (create, update, delete)  [visual: table]
+EstateItemChanges(_startTime)
+| where EventTime <= _endTime and Change != "Baseline"
+| order by EventTime desc
+| project EventTime, Change, Scope, ItemName, ItemKind, WorkspaceName, ChangedBy, ChangedFields, Origin
+| take 200
+
+// --- Inventory by workspace  [visual: table]
+EstateInventory()
+| summarize Items = count(), Reports = countif(ItemKind == "Report"), SemanticModels = countif(ItemKind == "SemanticModel"),
+            Lakehouses = countif(ItemKind == "Lakehouse"), Warehouses = countif(ItemKind == "Warehouse"),
+            Notebooks = countif(ItemKind == "Notebook"), Pipelines = countif(ItemKind == "DataPipeline"),
+            LastChange = max(LastUpdated) by WorkspaceName
+| order by Items desc
+
+// --- Workspaces without a user admin  [visual: table]
+let userAdmins = EstateAccessCurrent()
+    | where Role == "Admin" and PrincipalType == "User"
+    | summarize UserAdmins = count() by WorkspaceId;
+EstateWorkspaces()
+| where WorkspaceType !~ "Personal" and State !~ "Deleted"
+| join kind=leftouter userAdmins on WorkspaceId
+| where isnull(UserAdmins)
+| project WorkspaceName, WorkspaceId, State, LastSeen
+
+// ===== Page: Collector health =====
+
+// --- Event sources (last hour)  [visual: table]
+RawEvents
+| where ingestion_time() > ago(1h)
+| summarize Events = count(), Latest = max(['time']),
+            AvgIngestLagSec = round(avg(datetime_diff("second", ingestion_time(), ['time'])), 0) by type, source
+| order by Latest desc
+
+// --- Events per minute by source  [visual: timechart]
+RawEvents
+| where ['time'] between (_startTime .. _endTime)
+| extend Stream = case(type startswith "Microsoft.Fabric.Capacity", "Capacity events",
+                       type contains "ItemJob", "Job events",
+                       type startswith "Microsoft.Fabric.Item", "Item events",
+                       source has "simulator", "Simulator",
+                       "Collector")
+| summarize Events = count() by bin(['time'], 1m), Stream
+| order by ['time'] asc
+
+// --- Collector heartbeats and errors  [visual: table]
+EstateCollectorHealth(_startTime)
+| where EventTime <= _endTime
+| order by EventTime desc
+| project EventTime, Kind, Collector, EventsSent, DurationSec, IngestLagSec, Message
+| take 200

@@ -1,0 +1,7 @@
+UserUPN,RoleName,Region
+north_director@{tenant},RegionalDirector,North
+south_director@{tenant},RegionalDirector,South
+east_director@{tenant},RegionalDirector,East
+west_director@{tenant},RegionalDirector,West
+retail_exec@{tenant},Executive,ALL
+mgmt_analyst@{tenant},Analyst,ALL

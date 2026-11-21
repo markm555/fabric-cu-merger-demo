@@ -1,0 +1,12 @@
+/// SQL connection string of the Combined-Data warehouse (Warehouse settings > SQL connection string)
+expression SqlEndpoint = "REPLACE-ME.datawarehouse.fabric.microsoft.com" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: 0ba72c08-a7f8-43e8-b0dc-1096d2923a46
+
+	annotation PBI_ResultType = Text
+
+/// Name of the warehouse that holds the [Combine-Data] schema
+expression WarehouseName = "Combined-Data" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: c1774dba-7307-4517-ac2d-4d6ac2dcaf3f
+
+	annotation PBI_ResultType = Text
+

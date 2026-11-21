@@ -1,0 +1,7 @@
+UserUPN,RoleName,Region
+north_director@fabrikam.demo,RegionalDirector,North
+south_director@fabrikam.demo,RegionalDirector,South
+east_director@fabrikam.demo,RegionalDirector,East
+west_director@fabrikam.demo,RegionalDirector,West
+retail_exec@fabrikam.demo,Executive,ALL
+mgmt_analyst@fabrikam.demo,Analyst,ALL

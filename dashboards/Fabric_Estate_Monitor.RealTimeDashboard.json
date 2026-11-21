@@ -1,0 +1,1459 @@
+{
+  "$schema": "https://dataexplorer.azure.com/static/d/schema/52/dashboard.json",
+  "id": "5194b607-79c9-57ae-addc-9173880d12e5",
+  "eTag": "\"\"",
+  "schema_version": "52",
+  "title": "Fabric Estate Monitor",
+  "autoRefresh": {
+    "enabled": true,
+    "defaultInterval": "30s",
+    "minInterval": "10s"
+  },
+  "tiles": [
+    {
+      "id": "31044711-1c52-56e6-b9b7-b4bef26f54d2",
+      "title": "Capacity utilization now (%)",
+      "visualType": "card",
+      "pageId": "ee0123a3-380b-5f35-b473-dc2df015e697",
+      "layout": {
+        "x": 0,
+        "y": 0,
+        "width": 4,
+        "height": 3
+      },
+      "queryRef": {
+        "kind": "query",
+        "queryId": "dd06e8c8-777e-5ca9-8233-9c2b7dd470ae"
+      },
+      "visualOptions": {
+        "multiStat__textSize": "auto",
+        "multiStat__valueColumn": null,
+        "colorRulesDisabled": true,
+        "colorStyle": "light",
+        "colorRules": []
+      }
+    },
+    {
+      "id": "76fcf7d0-f907-5f05-a532-ba2fec72203f",
+      "title": "Capacity health",
+      "visualType": "card",
+      "pageId": "ee0123a3-380b-5f35-b473-dc2df015e697",
+      "layout": {
+        "x": 4,
+        "y": 0,
+        "width": 4,
+        "height": 3
+      },
+      "queryRef": {
+        "kind": "query",
+        "queryId": "61c2aae9-fd3a-589f-8bd4-67435e26c4ff"
+      },
+      "visualOptions": {
+        "multiStat__textSize": "auto",
+        "multiStat__valueColumn": null,
+        "colorRulesDisabled": true,
+        "colorStyle": "light",
+        "colorRules": []
+      }
+    },
+    {
+      "id": "48b6a912-1d48-5f0d-babd-e3c8e16c827e",
+      "title": "Jobs running",
+      "visualType": "card",
+      "pageId": "ee0123a3-380b-5f35-b473-dc2df015e697",
+      "layout": {
+        "x": 8,
+        "y": 0,
+        "width": 4,
+        "height": 3
+      },
+      "queryRef": {
+        "kind": "query",
+        "queryId": "f8c2c172-e8e6-5ae3-ba89-1ec0155e2e27"
+      },
+      "visualOptions": {
+        "multiStat__textSize": "auto",
+        "multiStat__valueColumn": null,
+        "colorRulesDisabled": true,
+        "colorStyle": "light",
+        "colorRules": []
+      }
+    },
+    {
+      "id": "bbaa07df-0f89-55e1-85f2-9f6ed820c67c",
+      "title": "Failed jobs and refreshes",
+      "visualType": "card",
+      "pageId": "ee0123a3-380b-5f35-b473-dc2df015e697",
+      "layout": {
+        "x": 12,
+        "y": 0,
+        "width": 4,
+        "height": 3
+      },
+      "queryRef": {
+        "kind": "query",
+        "queryId": "000ed588-2a94-57f7-a2d0-d7741ffc0451"
+      },
+      "visualOptions": {
+        "multiStat__textSize": "auto",
+        "multiStat__valueColumn": null,
+        "colorRulesDisabled": true,
+        "colorStyle": "light",
+        "colorRules": []
+      }
+    },
+    {
+      "id": "0afefc6a-e3e3-562d-8917-8eceb7ed8814",
+      "title": "Active users (15 min)",
+      "visualType": "card",
+      "pageId": "ee0123a3-380b-5f35-b473-dc2df015e697",
+      "layout": {
+        "x": 16,
+        "y": 0,
+        "width": 4,
+        "height": 3
+      },
+      "queryRef": {
+        "kind": "query",
+        "queryId": "108037b8-f263-58db-aa53-933b68be36a5"
+      },
+      "visualOptions": {
+        "multiStat__textSize": "auto",
+        "multiStat__valueColumn": null,
+        "colorRulesDisabled": true,
+        "colorStyle": "light",
+        "colorRules": []
+      }
+    },
+    {
+      "id": "0eca2b11-3868-5133-853b-cc254cb031e4",
+      "title": "Events per minute (5 min)",
+      "visualType": "card",
+      "pageId": "ee0123a3-380b-5f35-b473-dc2df015e697",
+      "layout": {
+        "x": 20,
+        "y": 0,
+        "width": 4,
+        "height": 3
+      },
+      "queryRef": {
+        "kind": "query",
+        "queryId": "770ba133-251c-5ea0-adcd-84667f5b150a"
+      },
+      "visualOptions": {
+        "multiStat__textSize": "auto",
+        "multiStat__valueColumn": null,
+        "colorRulesDisabled": true,
+        "colorStyle": "light",
+        "colorRules": []
+      }
+    },
+    {
+      "id": "6ec901f6-4ab8-5121-a22f-0e7209639402",
+      "title": "Capacity utilization, 30-second windows (%)",
+      "visualType": "timechart",
+      "pageId": "ee0123a3-380b-5f35-b473-dc2df015e697",
+      "layout": {
+        "x": 0,
+        "y": 3,
+        "width": 12,
+        "height": 7
+      },
+      "queryRef": {
+        "kind": "query",
+        "queryId": "cd25a51f-e306-55bc-b56d-80d358aecbe8"
+      },
+      "visualOptions": {
+        "multipleYAxes": {
+          "base": {
+            "id": "-1",
+            "label": "",
+            "columns": [],
+            "yAxisMaximumValue": null,
+            "yAxisMinimumValue": null,
+            "yAxisScale": "linear",
+            "horizontalLines": []
+          },
+          "additional": [],
+          "showMultiplePanels": false
+        },
+        "hideLegend": false,
+        "legendLocation": "bottom",
+        "xColumnTitle": "",
+        "xColumn": null,
+        "yColumns": null,
+        "seriesColumns": null,
+        "xAxisScale": "linear",
+        "verticalLine": "",
+        "crossFilterDisabled": false,
+        "drillthroughDisabled": false,
+        "crossFilter": [],
+        "drillthrough": []
+      }
+    },
+    {
+      "id": "896d51e8-695e-5a85-a140-e7633440019c",
+      "title": "Throttling pressure (% of limit; over 100 means throttling)",
+      "visualType": "timechart",
+      "pageId": "ee0123a3-380b-5f35-b473-dc2df015e697",
+      "layout": {
+        "x": 12,
+        "y": 3,
+        "width": 12,
+        "height": 7
+      },
+      "queryRef": {
+        "kind": "query",
+        "queryId": "ca6261fa-7d93-52f8-86c1-e9ca75b840fb"
+      },
+      "visualOptions": {
+        "multipleYAxes": {
+          "base": {
+            "id": "-1",
+            "label": "",
+            "columns": [],
+            "yAxisMaximumValue": null,
+            "yAxisMinimumValue": null,
+            "yAxisScale": "linear",
+            "horizontalLines": []
+          },
+          "additional": [],
+          "showMultiplePanels": false
+        },
+        "hideLegend": false,
+        "legendLocation": "bottom",
+        "xColumnTitle": "",
+        "xColumn": null,
+        "yColumns": null,
+        "seriesColumns": null,
+        "xAxisScale": "linear",
+        "verticalLine": "",
+        "crossFilterDisabled": false,
+        "drillthroughDisabled": false,
+        "crossFilter": [],
+        "drillthrough": []
+      }
+    },
+    {
+      "id": "c497f5c3-e42f-5961-a5bd-a9852f20f70f",
+      "title": "Live job and refresh feed",
+      "visualType": "table",
+      "pageId": "ee0123a3-380b-5f35-b473-dc2df015e697",
+      "layout": {
+        "x": 0,
+        "y": 10,
+        "width": 14,
+        "height": 9
+      },
+      "queryRef": {
+        "kind": "query",
+        "queryId": "88c76f3b-505a-50b7-be53-84adee6081f0"
+      },
+      "visualOptions": {
+        "table__enableRenderLinks": true,
+        "colorRulesDisabled": true,
+        "colorStyle": "light",
+        "crossFilterDisabled": false,
+        "drillthroughDisabled": false,
+        "crossFilter": [],
+        "drillthrough": [],
+        "table__renderLinks": [],
+        "colorRules": []
+      }
+    },
+    {
+      "id": "1b713b74-9611-5e87-82f7-8adcfc8e7759",
+      "title": "Jobs by status (5-minute buckets)",
+      "visualType": "column",
+      "pageId": "ee0123a3-380b-5f35-b473-dc2df015e697",
+      "layout": {
+        "x": 14,
+        "y": 10,
+        "width": 10,
+        "height": 9
+      },
+      "queryRef": {
+        "kind": "query",
+        "queryId": "a974036f-04d5-5b91-8755-8c36c6baa10d"
+      },
+      "visualOptions": {
+        "multipleYAxes": {
+          "base": {
+            "id": "-1",
+            "label": "",
+            "columns": [],
+            "yAxisMaximumValue": null,
+            "yAxisMinimumValue": null,
+            "yAxisScale": "linear",
+            "horizontalLines": []
+          },
+          "additional": [],
+          "showMultiplePanels": false
+        },
+        "hideLegend": false,
+        "legendLocation": "bottom",
+        "xColumnTitle": "",
+        "xColumn": null,
+        "yColumns": null,
+        "seriesColumns": null,
+        "xAxisScale": "linear",
+        "verticalLine": "",
+        "crossFilterDisabled": false,
+        "drillthroughDisabled": false,
+        "crossFilter": [],
+        "drillthrough": []
+      }
+    },
+    {
+      "id": "dbfdeec9-fc75-572f-b2bb-90baf046dad6",
+      "title": "Top capacity consumers (capacity operation events)",
+      "visualType": "table",
+      "pageId": "ee0123a3-380b-5f35-b473-dc2df015e697",
+      "layout": {
+        "x": 0,
+        "y": 19,
+        "width": 14,
+        "height": 8
+      },
+      "queryRef": {
+        "kind": "query",
+        "queryId": "caebae25-b3e0-59e0-987c-92a1400ce083"
+      },
+      "visualOptions": {
+        "table__enableRenderLinks": true,
+        "colorRulesDisabled": true,
+        "colorStyle": "light",
+        "crossFilterDisabled": false,
+        "drillthroughDisabled": false,
+        "crossFilter": [],
+        "drillthrough": [],
+        "table__renderLinks": [],
+        "colorRules": []
+      }
+    },
+    {
+      "id": "ddcf53b4-62e0-5bdd-84fb-3d424e9fb5f0",
+      "title": "Interactive vs background CU (seconds per 30s window)",
+      "visualType": "area",
+      "pageId": "ee0123a3-380b-5f35-b473-dc2df015e697",
+      "layout": {
+        "x": 14,
+        "y": 19,
+        "width": 10,
+        "height": 8
+      },
+      "queryRef": {
+        "kind": "query",
+        "queryId": "16e5002f-7171-5192-b32f-11b1e7840880"
+      },
+      "visualOptions": {
+        "multipleYAxes": {
+          "base": {
+            "id": "-1",
+            "label": "",
+            "columns": [],
+            "yAxisMaximumValue": null,
+            "yAxisMinimumValue": null,
+            "yAxisScale": "linear",
+            "horizontalLines": []
+          },
+          "additional": [],
+          "showMultiplePanels": false
+        },
+        "hideLegend": false,
+        "legendLocation": "bottom",
+        "xColumnTitle": "",
+        "xColumn": null,
+        "yColumns": null,
+        "seriesColumns": null,
+        "xAxisScale": "linear",
+        "verticalLine": "",
+        "crossFilterDisabled": false,
+        "drillthroughDisabled": false,
+        "crossFilter": [],
+        "drillthrough": []
+      }
+    },
+    {
+      "id": "ad7c8a5c-90ba-5fbb-9797-40bc3c487827",
+      "title": "Unique users",
+      "visualType": "card",
+      "pageId": "ddf1cb81-7358-5bc8-b840-6bc0febdd1ab",
+      "layout": {
+        "x": 0,
+        "y": 0,
+        "width": 4,
+        "height": 3
+      },
+      "queryRef": {
+        "kind": "query",
+        "queryId": "391c7a1f-eb74-5a62-9d52-bbdab356385e"
+      },
+      "visualOptions": {
+        "multiStat__textSize": "auto",
+        "multiStat__valueColumn": null,
+        "colorRulesDisabled": true,
+        "colorStyle": "light",
+        "colorRules": []
+      }
+    },
+    {
+      "id": "68e62d9b-420e-5637-a0b2-4fe7ca56c39a",
+      "title": "Views and queries",
+      "visualType": "card",
+      "pageId": "ddf1cb81-7358-5bc8-b840-6bc0febdd1ab",
+      "layout": {
+        "x": 4,
+        "y": 0,
+        "width": 4,
+        "height": 3
+      },
+      "queryRef": {
+        "kind": "query",
+        "queryId": "10f6d619-dc7e-5259-b595-d7f8806b4297"
+      },
+      "visualOptions": {
+        "multiStat__textSize": "auto",
+        "multiStat__valueColumn": null,
+        "colorRulesDisabled": true,
+        "colorStyle": "light",
+        "colorRules": []
+      }
+    },
+    {
+      "id": "913fd3e2-99c8-5a9e-88a1-00047502d177",
+      "title": "Copilot and AI interactions",
+      "visualType": "card",
+      "pageId": "ddf1cb81-7358-5bc8-b840-6bc0febdd1ab",
+      "layout": {
+        "x": 8,
+        "y": 0,
+        "width": 4,
+        "height": 3
+      },
+      "queryRef": {
+        "kind": "query",
+        "queryId": "2d6ad9fe-0cfe-53b2-99d3-40ba45166e4f"
+      },
+      "visualOptions": {
+        "multiStat__textSize": "auto",
+        "multiStat__valueColumn": null,
+        "colorRulesDisabled": true,
+        "colorStyle": "light",
+        "colorRules": []
+      }
+    },
+    {
+      "id": "63eb5f46-e67e-5859-92bc-b465020f6b44",
+      "title": "Exports and downloads",
+      "visualType": "card",
+      "pageId": "ddf1cb81-7358-5bc8-b840-6bc0febdd1ab",
+      "layout": {
+        "x": 12,
+        "y": 0,
+        "width": 4,
+        "height": 3
+      },
+      "queryRef": {
+        "kind": "query",
+        "queryId": "0cce678d-dd33-511e-85c3-f26d1801bb10"
+      },
+      "visualOptions": {
+        "multiStat__textSize": "auto",
+        "multiStat__valueColumn": null,
+        "colorRulesDisabled": true,
+        "colorStyle": "light",
+        "colorRules": []
+      }
+    },
+    {
+      "id": "d0d8d628-c9cd-5e83-bc6f-c729fab0849f",
+      "title": "Access changes",
+      "visualType": "card",
+      "pageId": "ddf1cb81-7358-5bc8-b840-6bc0febdd1ab",
+      "layout": {
+        "x": 16,
+        "y": 0,
+        "width": 4,
+        "height": 3
+      },
+      "queryRef": {
+        "kind": "query",
+        "queryId": "97daab44-11c0-5efa-8842-33e99b0f0d69"
+      },
+      "visualOptions": {
+        "multiStat__textSize": "auto",
+        "multiStat__valueColumn": null,
+        "colorRulesDisabled": true,
+        "colorStyle": "light",
+        "colorRules": []
+      }
+    },
+    {
+      "id": "f72d61b5-cb41-5a33-8839-0ae1fa22bd7c",
+      "title": "Failed operations",
+      "visualType": "card",
+      "pageId": "ddf1cb81-7358-5bc8-b840-6bc0febdd1ab",
+      "layout": {
+        "x": 20,
+        "y": 0,
+        "width": 4,
+        "height": 3
+      },
+      "queryRef": {
+        "kind": "query",
+        "queryId": "e00c5817-284d-5580-81a5-346f8c61ad21"
+      },
+      "visualOptions": {
+        "multiStat__textSize": "auto",
+        "multiStat__valueColumn": null,
+        "colorRulesDisabled": true,
+        "colorStyle": "light",
+        "colorRules": []
+      }
+    },
+    {
+      "id": "e4027fb8-5aff-5f54-96c7-bf4ec11abc22",
+      "title": "Activity per minute by category",
+      "visualType": "timechart",
+      "pageId": "ddf1cb81-7358-5bc8-b840-6bc0febdd1ab",
+      "layout": {
+        "x": 0,
+        "y": 3,
+        "width": 14,
+        "height": 8
+      },
+      "queryRef": {
+        "kind": "query",
+        "queryId": "2e9896c6-3a56-5427-b5c8-81eefa467dec"
+      },
+      "visualOptions": {
+        "multipleYAxes": {
+          "base": {
+            "id": "-1",
+            "label": "",
+            "columns": [],
+            "yAxisMaximumValue": null,
+            "yAxisMinimumValue": null,
+            "yAxisScale": "linear",
+            "horizontalLines": []
+          },
+          "additional": [],
+          "showMultiplePanels": false
+        },
+        "hideLegend": false,
+        "legendLocation": "bottom",
+        "xColumnTitle": "",
+        "xColumn": null,
+        "yColumns": null,
+        "seriesColumns": null,
+        "xAxisScale": "linear",
+        "verticalLine": "",
+        "crossFilterDisabled": false,
+        "drillthroughDisabled": false,
+        "crossFilter": [],
+        "drillthrough": []
+      }
+    },
+    {
+      "id": "c5e96184-d753-5334-9e42-136102aac7c1",
+      "title": "Most-used items",
+      "visualType": "bar",
+      "pageId": "ddf1cb81-7358-5bc8-b840-6bc0febdd1ab",
+      "layout": {
+        "x": 14,
+        "y": 3,
+        "width": 10,
+        "height": 8
+      },
+      "queryRef": {
+        "kind": "query",
+        "queryId": "1cfae21c-71fe-57a8-86d2-8918a6a601d0"
+      },
+      "visualOptions": {
+        "multipleYAxes": {
+          "base": {
+            "id": "-1",
+            "label": "",
+            "columns": [],
+            "yAxisMaximumValue": null,
+            "yAxisMinimumValue": null,
+            "yAxisScale": "linear",
+            "horizontalLines": []
+          },
+          "additional": [],
+          "showMultiplePanels": false
+        },
+        "hideLegend": false,
+        "legendLocation": "bottom",
+        "xColumnTitle": "",
+        "xColumn": null,
+        "yColumns": null,
+        "seriesColumns": null,
+        "xAxisScale": "linear",
+        "verticalLine": "",
+        "crossFilterDisabled": false,
+        "drillthroughDisabled": false,
+        "crossFilter": [],
+        "drillthrough": []
+      }
+    },
+    {
+      "id": "c5cd73fe-4572-5fc7-a76b-a7f82ffcbca9",
+      "title": "Export and download watch (10 or more in the range is flagged)",
+      "visualType": "table",
+      "pageId": "ddf1cb81-7358-5bc8-b840-6bc0febdd1ab",
+      "layout": {
+        "x": 0,
+        "y": 11,
+        "width": 12,
+        "height": 8
+      },
+      "queryRef": {
+        "kind": "query",
+        "queryId": "35b91556-2cad-5850-b7cb-2d6cee5a2ce4"
+      },
+      "visualOptions": {
+        "table__enableRenderLinks": true,
+        "colorRulesDisabled": true,
+        "colorStyle": "light",
+        "crossFilterDisabled": false,
+        "drillthroughDisabled": false,
+        "crossFilter": [],
+        "drillthrough": [],
+        "table__renderLinks": [],
+        "colorRules": []
+      }
+    },
+    {
+      "id": "fabb3139-83f9-51e8-81f6-4ac62093137f",
+      "title": "Copilot and AI activity",
+      "visualType": "table",
+      "pageId": "ddf1cb81-7358-5bc8-b840-6bc0febdd1ab",
+      "layout": {
+        "x": 12,
+        "y": 11,
+        "width": 12,
+        "height": 8
+      },
+      "queryRef": {
+        "kind": "query",
+        "queryId": "7c780f59-c1e4-598b-9728-9b5c90aa5300"
+      },
+      "visualOptions": {
+        "table__enableRenderLinks": true,
+        "colorRulesDisabled": true,
+        "colorStyle": "light",
+        "crossFilterDisabled": false,
+        "drillthroughDisabled": false,
+        "crossFilter": [],
+        "drillthrough": [],
+        "table__renderLinks": [],
+        "colorRules": []
+      }
+    },
+    {
+      "id": "2f30207c-f02d-5631-9d9c-8d619ecca85b",
+      "title": "Workspace access changes",
+      "visualType": "table",
+      "pageId": "ddf1cb81-7358-5bc8-b840-6bc0febdd1ab",
+      "layout": {
+        "x": 0,
+        "y": 19,
+        "width": 12,
+        "height": 8
+      },
+      "queryRef": {
+        "kind": "query",
+        "queryId": "0ab788c3-510a-5e1d-9231-691abfacb58f"
+      },
+      "visualOptions": {
+        "table__enableRenderLinks": true,
+        "colorRulesDisabled": true,
+        "colorStyle": "light",
+        "crossFilterDisabled": false,
+        "drillthroughDisabled": false,
+        "crossFilter": [],
+        "drillthrough": [],
+        "table__renderLinks": [],
+        "colorRules": []
+      }
+    },
+    {
+      "id": "72492e2e-0828-5063-9e81-e792730388fb",
+      "title": "Activity feed",
+      "visualType": "table",
+      "pageId": "ddf1cb81-7358-5bc8-b840-6bc0febdd1ab",
+      "layout": {
+        "x": 12,
+        "y": 19,
+        "width": 12,
+        "height": 8
+      },
+      "queryRef": {
+        "kind": "query",
+        "queryId": "32cd196a-7b7b-5310-9c8e-411e7be0dfa6"
+      },
+      "visualOptions": {
+        "table__enableRenderLinks": true,
+        "colorRulesDisabled": true,
+        "colorStyle": "light",
+        "crossFilterDisabled": false,
+        "drillthroughDisabled": false,
+        "crossFilter": [],
+        "drillthrough": [],
+        "table__renderLinks": [],
+        "colorRules": []
+      }
+    },
+    {
+      "id": "738f423f-afb6-517f-9679-49637aed4dc1",
+      "title": "Items",
+      "visualType": "card",
+      "pageId": "8a642553-5fb4-5fb4-a125-769dc6178fe8",
+      "layout": {
+        "x": 0,
+        "y": 0,
+        "width": 6,
+        "height": 3
+      },
+      "queryRef": {
+        "kind": "query",
+        "queryId": "75aea702-20be-5e64-9846-28cd5c1b5cff"
+      },
+      "visualOptions": {
+        "multiStat__textSize": "auto",
+        "multiStat__valueColumn": null,
+        "colorRulesDisabled": true,
+        "colorStyle": "light",
+        "colorRules": []
+      }
+    },
+    {
+      "id": "1e8fe2bd-ccad-5241-a3a1-57020995c921",
+      "title": "Workspaces",
+      "visualType": "card",
+      "pageId": "8a642553-5fb4-5fb4-a125-769dc6178fe8",
+      "layout": {
+        "x": 6,
+        "y": 0,
+        "width": 6,
+        "height": 3
+      },
+      "queryRef": {
+        "kind": "query",
+        "queryId": "22903388-5407-5d82-b20e-2e706aad115c"
+      },
+      "visualOptions": {
+        "multiStat__textSize": "auto",
+        "multiStat__valueColumn": null,
+        "colorRulesDisabled": true,
+        "colorStyle": "light",
+        "colorRules": []
+      }
+    },
+    {
+      "id": "c67f222a-d641-50f5-b926-ee02d0d78c08",
+      "title": "Changes in range",
+      "visualType": "card",
+      "pageId": "8a642553-5fb4-5fb4-a125-769dc6178fe8",
+      "layout": {
+        "x": 12,
+        "y": 0,
+        "width": 6,
+        "height": 3
+      },
+      "queryRef": {
+        "kind": "query",
+        "queryId": "3c5e8281-9979-53cc-a3c7-1d8430092f28"
+      },
+      "visualOptions": {
+        "multiStat__textSize": "auto",
+        "multiStat__valueColumn": null,
+        "colorRulesDisabled": true,
+        "colorStyle": "light",
+        "colorRules": []
+      }
+    },
+    {
+      "id": "842e6816-8571-5c52-8e0e-28a218e9a194",
+      "title": "Deletions in range",
+      "visualType": "card",
+      "pageId": "8a642553-5fb4-5fb4-a125-769dc6178fe8",
+      "layout": {
+        "x": 18,
+        "y": 0,
+        "width": 6,
+        "height": 3
+      },
+      "queryRef": {
+        "kind": "query",
+        "queryId": "e5eed53a-1466-53ab-a2ce-fd851f3765b9"
+      },
+      "visualOptions": {
+        "multiStat__textSize": "auto",
+        "multiStat__valueColumn": null,
+        "colorRulesDisabled": true,
+        "colorStyle": "light",
+        "colorRules": []
+      }
+    },
+    {
+      "id": "5ba78925-ca04-5e25-97eb-dafad59db7a8",
+      "title": "Items by type",
+      "visualType": "bar",
+      "pageId": "8a642553-5fb4-5fb4-a125-769dc6178fe8",
+      "layout": {
+        "x": 0,
+        "y": 3,
+        "width": 8,
+        "height": 9
+      },
+      "queryRef": {
+        "kind": "query",
+        "queryId": "cf58a881-e299-59d2-b15a-678d9acea8d0"
+      },
+      "visualOptions": {
+        "multipleYAxes": {
+          "base": {
+            "id": "-1",
+            "label": "",
+            "columns": [],
+            "yAxisMaximumValue": null,
+            "yAxisMinimumValue": null,
+            "yAxisScale": "linear",
+            "horizontalLines": []
+          },
+          "additional": [],
+          "showMultiplePanels": false
+        },
+        "hideLegend": false,
+        "legendLocation": "bottom",
+        "xColumnTitle": "",
+        "xColumn": null,
+        "yColumns": null,
+        "seriesColumns": null,
+        "xAxisScale": "linear",
+        "verticalLine": "",
+        "crossFilterDisabled": false,
+        "drillthroughDisabled": false,
+        "crossFilter": [],
+        "drillthrough": []
+      }
+    },
+    {
+      "id": "f6dd122f-efea-55a0-a966-0e50c6bb8f09",
+      "title": "Change feed (create, update, delete)",
+      "visualType": "table",
+      "pageId": "8a642553-5fb4-5fb4-a125-769dc6178fe8",
+      "layout": {
+        "x": 8,
+        "y": 3,
+        "width": 16,
+        "height": 9
+      },
+      "queryRef": {
+        "kind": "query",
+        "queryId": "bb30e36a-ba86-5efb-ad61-c5d962937c8f"
+      },
+      "visualOptions": {
+        "table__enableRenderLinks": true,
+        "colorRulesDisabled": true,
+        "colorStyle": "light",
+        "crossFilterDisabled": false,
+        "drillthroughDisabled": false,
+        "crossFilter": [],
+        "drillthrough": [],
+        "table__renderLinks": [],
+        "colorRules": []
+      }
+    },
+    {
+      "id": "fddb208f-b856-53c6-89f0-9a21e337b6fc",
+      "title": "Inventory by workspace",
+      "visualType": "table",
+      "pageId": "8a642553-5fb4-5fb4-a125-769dc6178fe8",
+      "layout": {
+        "x": 0,
+        "y": 12,
+        "width": 14,
+        "height": 9
+      },
+      "queryRef": {
+        "kind": "query",
+        "queryId": "a2740edf-2100-5e81-8bee-6f69e9c22756"
+      },
+      "visualOptions": {
+        "table__enableRenderLinks": true,
+        "colorRulesDisabled": true,
+        "colorStyle": "light",
+        "crossFilterDisabled": false,
+        "drillthroughDisabled": false,
+        "crossFilter": [],
+        "drillthrough": [],
+        "table__renderLinks": [],
+        "colorRules": []
+      }
+    },
+    {
+      "id": "ccb7f9d8-1ec0-5420-b2bc-2196d0f9079a",
+      "title": "Workspaces without a user admin",
+      "visualType": "table",
+      "pageId": "8a642553-5fb4-5fb4-a125-769dc6178fe8",
+      "layout": {
+        "x": 14,
+        "y": 12,
+        "width": 10,
+        "height": 9
+      },
+      "queryRef": {
+        "kind": "query",
+        "queryId": "7d6d8279-e97b-58da-bd34-cbb6ce0fb9b4"
+      },
+      "visualOptions": {
+        "table__enableRenderLinks": true,
+        "colorRulesDisabled": true,
+        "colorStyle": "light",
+        "crossFilterDisabled": false,
+        "drillthroughDisabled": false,
+        "crossFilter": [],
+        "drillthrough": [],
+        "table__renderLinks": [],
+        "colorRules": []
+      }
+    },
+    {
+      "id": "8d37a522-1563-53c7-8149-02cda5c1e945",
+      "title": "Event sources (last hour)",
+      "visualType": "table",
+      "pageId": "c79169a0-af56-5449-b778-8ae7e0477636",
+      "layout": {
+        "x": 0,
+        "y": 0,
+        "width": 14,
+        "height": 8
+      },
+      "queryRef": {
+        "kind": "query",
+        "queryId": "a2a19272-d1e7-5fc7-9f97-91308981f2fb"
+      },
+      "visualOptions": {
+        "table__enableRenderLinks": true,
+        "colorRulesDisabled": true,
+        "colorStyle": "light",
+        "crossFilterDisabled": false,
+        "drillthroughDisabled": false,
+        "crossFilter": [],
+        "drillthrough": [],
+        "table__renderLinks": [],
+        "colorRules": []
+      }
+    },
+    {
+      "id": "16e3dc9a-10be-5772-abe3-65162729bff3",
+      "title": "Events per minute by source",
+      "visualType": "timechart",
+      "pageId": "c79169a0-af56-5449-b778-8ae7e0477636",
+      "layout": {
+        "x": 14,
+        "y": 0,
+        "width": 10,
+        "height": 8
+      },
+      "queryRef": {
+        "kind": "query",
+        "queryId": "a7bae016-e023-5b2d-9924-010eb1691255"
+      },
+      "visualOptions": {
+        "multipleYAxes": {
+          "base": {
+            "id": "-1",
+            "label": "",
+            "columns": [],
+            "yAxisMaximumValue": null,
+            "yAxisMinimumValue": null,
+            "yAxisScale": "linear",
+            "horizontalLines": []
+          },
+          "additional": [],
+          "showMultiplePanels": false
+        },
+        "hideLegend": false,
+        "legendLocation": "bottom",
+        "xColumnTitle": "",
+        "xColumn": null,
+        "yColumns": null,
+        "seriesColumns": null,
+        "xAxisScale": "linear",
+        "verticalLine": "",
+        "crossFilterDisabled": false,
+        "drillthroughDisabled": false,
+        "crossFilter": [],
+        "drillthrough": []
+      }
+    },
+    {
+      "id": "6c222cc0-d2a7-538c-8e5e-28517ab06e16",
+      "title": "Collector heartbeats and errors",
+      "visualType": "table",
+      "pageId": "c79169a0-af56-5449-b778-8ae7e0477636",
+      "layout": {
+        "x": 0,
+        "y": 8,
+        "width": 24,
+        "height": 9
+      },
+      "queryRef": {
+        "kind": "query",
+        "queryId": "057d1fd5-1ca4-57c6-91dc-ef5df2b30871"
+      },
+      "visualOptions": {
+        "table__enableRenderLinks": true,
+        "colorRulesDisabled": true,
+        "colorStyle": "light",
+        "crossFilterDisabled": false,
+        "drillthroughDisabled": false,
+        "crossFilter": [],
+        "drillthrough": [],
+        "table__renderLinks": [],
+        "colorRules": []
+      }
+    }
+  ],
+  "baseQueries": [],
+  "parameters": [
+    {
+      "kind": "duration",
+      "id": "1fb6c735-c18d-53f2-b52e-82004e0fdeac",
+      "displayName": "Time range",
+      "description": "",
+      "beginVariableName": "_startTime",
+      "endVariableName": "_endTime",
+      "defaultValue": {
+        "kind": "dynamic",
+        "count": 1,
+        "unit": "hours"
+      },
+      "showOnPages": {
+        "kind": "all"
+      }
+    }
+  ],
+  "dataSources": [
+    {
+      "id": "bef59065-7212-5ded-8a15-bfa1aff86f69",
+      "name": "EstateMonitor",
+      "clusterUri": "https://REPLACE-WITH-EVENTHOUSE-QUERY-URI",
+      "database": "EstateMonitor",
+      "kind": "manual-kusto",
+      "scopeId": "kusto"
+    }
+  ],
+  "pages": [
+    {
+      "name": "Live operations",
+      "id": "ee0123a3-380b-5f35-b473-dc2df015e697"
+    },
+    {
+      "name": "Activity and security",
+      "id": "ddf1cb81-7358-5bc8-b840-6bc0febdd1ab"
+    },
+    {
+      "name": "Inventory and change",
+      "id": "8a642553-5fb4-5fb4-a125-769dc6178fe8"
+    },
+    {
+      "name": "Collector health",
+      "id": "c79169a0-af56-5449-b778-8ae7e0477636"
+    }
+  ],
+  "queries": [
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "bef59065-7212-5ded-8a15-bfa1aff86f69"
+      },
+      "text": "EstateCapacity(ago(15m))\n| summarize arg_max(WindowStart, UtilizationPct) by CapacityId\n| summarize UtilizationPct = max(UtilizationPct)\n",
+      "id": "dd06e8c8-777e-5ca9-8233-9c2b7dd470ae",
+      "usedVariables": []
+    },
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "bef59065-7212-5ded-8a15-bfa1aff86f69"
+      },
+      "text": "EstateCapacityState(ago(30d))\n| summarize arg_max(TransitionTime, CapacityState, Reason) by CapacityId\n| summarize Overloaded = countif(CapacityState =~ \"Overloaded\" or Reason in~ (\"InteractiveDelay\", \"InteractiveRejection\", \"BackgroundRejection\"))\n| project Status = iff(Overloaded > 0, strcat(Overloaded, \" overloaded\"), \"Healthy\")\n",
+      "id": "61c2aae9-fd3a-589f-8bd4-67435e26c4ff",
+      "usedVariables": []
+    },
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "bef59065-7212-5ded-8a15-bfa1aff86f69"
+      },
+      "text": "EstateJobsLatest(ago(1d))\n| where Status == \"InProgress\"\n| count\n",
+      "id": "f8c2c172-e8e6-5ae3-ba89-1ec0155e2e27",
+      "usedVariables": []
+    },
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "bef59065-7212-5ded-8a15-bfa1aff86f69"
+      },
+      "text": "EstateJobsLatest(_startTime)\n| where EventTime between (_startTime .. _endTime) and Status == \"Failed\"\n| count\n",
+      "id": "000ed588-2a94-57f7-a2d0-d7741ffc0451",
+      "usedVariables": [
+        "_endTime",
+        "_startTime"
+      ]
+    },
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "bef59065-7212-5ded-8a15-bfa1aff86f69"
+      },
+      "text": "EstateActivity(ago(15m))\n| summarize Users = dcount(User)\n",
+      "id": "108037b8-f263-58db-aa53-933b68be36a5",
+      "usedVariables": []
+    },
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "bef59065-7212-5ded-8a15-bfa1aff86f69"
+      },
+      "text": "RawEvents\n| where ingestion_time() > ago(5m)\n| summarize EventsPerMinute = round(count() / 5.0, 1)\n",
+      "id": "770ba133-251c-5ea0-adcd-84667f5b150a",
+      "usedVariables": []
+    },
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "bef59065-7212-5ded-8a15-bfa1aff86f69"
+      },
+      "text": "EstateCapacity(_startTime)\n| where WindowStart between (_startTime .. _endTime)\n| project WindowStart, CapacityName, UtilizationPct\n| order by WindowStart asc\n",
+      "id": "cd25a51f-e306-55bc-b56d-80d358aecbe8",
+      "usedVariables": [
+        "_endTime",
+        "_startTime"
+      ]
+    },
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "bef59065-7212-5ded-8a15-bfa1aff86f69"
+      },
+      "text": "EstateCapacity(_startTime)\n| where WindowStart between (_startTime .. _endTime)\n| summarize InteractiveDelay = max(InteractiveDelayPct), InteractiveRejection = max(InteractiveRejectPct),\n            BackgroundRejection = max(BackgroundRejectPct) by WindowStart\n| order by WindowStart asc\n",
+      "id": "ca6261fa-7d93-52f8-86c1-e9ca75b840fb",
+      "usedVariables": [
+        "_endTime",
+        "_startTime"
+      ]
+    },
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "bef59065-7212-5ded-8a15-bfa1aff86f69"
+      },
+      "text": "EstateJobsLatest(_startTime)\n| where EventTime <= _endTime\n| order by EventTime desc\n| project EventTime, Status, ItemName, ItemKind, WorkspaceName, JobType, InvokeType, DurationSec, Origin, ErrorMessage\n| take 100\n",
+      "id": "88c76f3b-505a-50b7-be53-84adee6081f0",
+      "usedVariables": [
+        "_endTime",
+        "_startTime"
+      ]
+    },
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "bef59065-7212-5ded-8a15-bfa1aff86f69"
+      },
+      "text": "EstateJobsLatest(_startTime)\n| where StartTime between (_startTime .. _endTime)\n| summarize Jobs = count() by bin(StartTime, 5m), Status\n| order by StartTime asc\n",
+      "id": "a974036f-04d5-5b91-8755-8c36c6baa10d",
+      "usedVariables": [
+        "_endTime",
+        "_startTime"
+      ]
+    },
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "bef59065-7212-5ded-8a15-bfa1aff86f69"
+      },
+      "text": "EstateCapacityOperations(_startTime)\n| where EventTime between (_startTime .. _endTime)\n| summarize CUSeconds = round(sum(CUms) / 1000.0, 1), Operations = count(),\n            ThrottledOperations = countif(ThrottlingDelayMs > 0), Users = dcount(Identity)\n          by WorkspaceName, ItemName, ItemKind\n| top 15 by CUSeconds\n",
+      "id": "caebae25-b3e0-59e0-987c-92a1400ce083",
+      "usedVariables": [
+        "_endTime",
+        "_startTime"
+      ]
+    },
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "bef59065-7212-5ded-8a15-bfa1aff86f69"
+      },
+      "text": "EstateCapacity(_startTime)\n| where WindowStart between (_startTime .. _endTime)\n| summarize Interactive = sum(InteractiveCUms) / 1000.0, Background = sum(BackgroundCUms) / 1000.0 by WindowStart\n| order by WindowStart asc\n",
+      "id": "16e5002f-7171-5192-b32f-11b1e7840880",
+      "usedVariables": [
+        "_endTime",
+        "_startTime"
+      ]
+    },
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "bef59065-7212-5ded-8a15-bfa1aff86f69"
+      },
+      "text": "EstateActivity(_startTime)\n| where EventTime <= _endTime\n| summarize Users = dcount(User)\n",
+      "id": "391c7a1f-eb74-5a62-9d52-bbdab356385e",
+      "usedVariables": [
+        "_endTime",
+        "_startTime"
+      ]
+    },
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "bef59065-7212-5ded-8a15-bfa1aff86f69"
+      },
+      "text": "EstateActivity(_startTime)\n| where EventTime <= _endTime and Category == \"Viewing and querying\"\n| count\n",
+      "id": "10f6d619-dc7e-5259-b595-d7f8806b4297",
+      "usedVariables": [
+        "_endTime",
+        "_startTime"
+      ]
+    },
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "bef59065-7212-5ded-8a15-bfa1aff86f69"
+      },
+      "text": "EstateActivity(_startTime)\n| where EventTime <= _endTime and Category == \"AI and Copilot\"\n| count\n",
+      "id": "2d6ad9fe-0cfe-53b2-99d3-40ba45166e4f",
+      "usedVariables": [
+        "_endTime",
+        "_startTime"
+      ]
+    },
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "bef59065-7212-5ded-8a15-bfa1aff86f69"
+      },
+      "text": "EstateActivity(_startTime)\n| where EventTime <= _endTime and Category == \"Export and download\"\n| count\n",
+      "id": "0cce678d-dd33-511e-85c3-f26d1801bb10",
+      "usedVariables": [
+        "_endTime",
+        "_startTime"
+      ]
+    },
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "bef59065-7212-5ded-8a15-bfa1aff86f69"
+      },
+      "text": "EstateAccessChanges(_startTime)\n| where EventTime <= _endTime and Change != \"Baseline\"\n| count\n",
+      "id": "97daab44-11c0-5efa-8842-33e99b0f0d69",
+      "usedVariables": [
+        "_endTime",
+        "_startTime"
+      ]
+    },
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "bef59065-7212-5ded-8a15-bfa1aff86f69"
+      },
+      "text": "EstateActivity(_startTime)\n| where EventTime <= _endTime and IsSuccess == false\n| count\n",
+      "id": "e00c5817-284d-5580-81a5-346f8c61ad21",
+      "usedVariables": [
+        "_endTime",
+        "_startTime"
+      ]
+    },
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "bef59065-7212-5ded-8a15-bfa1aff86f69"
+      },
+      "text": "EstateActivity(_startTime)\n| where EventTime <= _endTime\n| summarize Events = count() by bin(EventTime, 1m), Category\n| order by EventTime asc\n",
+      "id": "2e9896c6-3a56-5427-b5c8-81eefa467dec",
+      "usedVariables": [
+        "_endTime",
+        "_startTime"
+      ]
+    },
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "bef59065-7212-5ded-8a15-bfa1aff86f69"
+      },
+      "text": "EstateActivity(_startTime)\n| where EventTime <= _endTime and Category == \"Viewing and querying\" and isnotempty(ItemName)\n| summarize Views = count() by ItemName\n| top 10 by Views\n",
+      "id": "1cfae21c-71fe-57a8-86d2-8918a6a601d0",
+      "usedVariables": [
+        "_endTime",
+        "_startTime"
+      ]
+    },
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "bef59065-7212-5ded-8a15-bfa1aff86f69"
+      },
+      "text": "EstateActivity(_startTime)\n| where EventTime <= _endTime and Category == \"Export and download\"\n| summarize Exports = count(), Items = dcount(ItemName), First = min(EventTime), Last = max(EventTime) by User\n| extend Flag = iff(Exports >= 10, \"Investigate\", \"\")\n| order by Exports desc\n",
+      "id": "35b91556-2cad-5850-b7cb-2d6cee5a2ce4",
+      "usedVariables": [
+        "_endTime",
+        "_startTime"
+      ]
+    },
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "bef59065-7212-5ded-8a15-bfa1aff86f69"
+      },
+      "text": "EstateActivity(_startTime)\n| where EventTime <= _endTime and Category == \"AI and Copilot\"\n| order by EventTime desc\n| project EventTime, User, Activity, ItemName, WorkspaceName\n| take 100\n",
+      "id": "7c780f59-c1e4-598b-9728-9b5c90aa5300",
+      "usedVariables": [
+        "_endTime",
+        "_startTime"
+      ]
+    },
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "bef59065-7212-5ded-8a15-bfa1aff86f69"
+      },
+      "text": "EstateAccessChanges(_startTime)\n| where EventTime <= _endTime and Change != \"Baseline\"\n| extend Attention = iff(Role == \"Admin\" and Change in (\"Granted\", \"RoleChanged\"), \"New admin\", \"\")\n| order by EventTime desc\n| project EventTime, Attention, Change, WorkspaceName, Principal, PrincipalType, Role, PreviousRole\n",
+      "id": "0ab788c3-510a-5e1d-9231-691abfacb58f",
+      "usedVariables": [
+        "_endTime",
+        "_startTime"
+      ]
+    },
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "bef59065-7212-5ded-8a15-bfa1aff86f69"
+      },
+      "text": "EstateActivity(_startTime)\n| where EventTime <= _endTime\n| order by EventTime desc\n| project EventTime, User, Activity, Category, ItemName, WorkspaceName, ClientApp, IsSuccess\n| take 200\n",
+      "id": "32cd196a-7b7b-5310-9c8e-411e7be0dfa6",
+      "usedVariables": [
+        "_endTime",
+        "_startTime"
+      ]
+    },
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "bef59065-7212-5ded-8a15-bfa1aff86f69"
+      },
+      "text": "EstateInventory()\n| count\n",
+      "id": "75aea702-20be-5e64-9846-28cd5c1b5cff",
+      "usedVariables": []
+    },
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "bef59065-7212-5ded-8a15-bfa1aff86f69"
+      },
+      "text": "EstateWorkspaces()\n| where WorkspaceType !~ \"Personal\"\n| count\n",
+      "id": "22903388-5407-5d82-b20e-2e706aad115c",
+      "usedVariables": []
+    },
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "bef59065-7212-5ded-8a15-bfa1aff86f69"
+      },
+      "text": "EstateItemChanges(_startTime)\n| where EventTime <= _endTime and Change != \"Baseline\"\n| count\n",
+      "id": "3c5e8281-9979-53cc-a3c7-1d8430092f28",
+      "usedVariables": [
+        "_endTime",
+        "_startTime"
+      ]
+    },
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "bef59065-7212-5ded-8a15-bfa1aff86f69"
+      },
+      "text": "EstateItemChanges(_startTime)\n| where EventTime <= _endTime and Change == \"Deleted\"\n| count\n",
+      "id": "e5eed53a-1466-53ab-a2ce-fd851f3765b9",
+      "usedVariables": [
+        "_endTime",
+        "_startTime"
+      ]
+    },
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "bef59065-7212-5ded-8a15-bfa1aff86f69"
+      },
+      "text": "EstateInventory()\n| summarize Items = count() by ItemKind\n| top 15 by Items\n",
+      "id": "cf58a881-e299-59d2-b15a-678d9acea8d0",
+      "usedVariables": []
+    },
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "bef59065-7212-5ded-8a15-bfa1aff86f69"
+      },
+      "text": "EstateItemChanges(_startTime)\n| where EventTime <= _endTime and Change != \"Baseline\"\n| order by EventTime desc\n| project EventTime, Change, Scope, ItemName, ItemKind, WorkspaceName, ChangedBy, ChangedFields, Origin\n| take 200\n",
+      "id": "bb30e36a-ba86-5efb-ad61-c5d962937c8f",
+      "usedVariables": [
+        "_endTime",
+        "_startTime"
+      ]
+    },
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "bef59065-7212-5ded-8a15-bfa1aff86f69"
+      },
+      "text": "EstateInventory()\n| summarize Items = count(), Reports = countif(ItemKind == \"Report\"), SemanticModels = countif(ItemKind == \"SemanticModel\"),\n            Lakehouses = countif(ItemKind == \"Lakehouse\"), Warehouses = countif(ItemKind == \"Warehouse\"),\n            Notebooks = countif(ItemKind == \"Notebook\"), Pipelines = countif(ItemKind == \"DataPipeline\"),\n            LastChange = max(LastUpdated) by WorkspaceName\n| order by Items desc\n",
+      "id": "a2740edf-2100-5e81-8bee-6f69e9c22756",
+      "usedVariables": []
+    },
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "bef59065-7212-5ded-8a15-bfa1aff86f69"
+      },
+      "text": "let userAdmins = EstateAccessCurrent()\n    | where Role == \"Admin\" and PrincipalType == \"User\"\n    | summarize UserAdmins = count() by WorkspaceId;\nEstateWorkspaces()\n| where WorkspaceType !~ \"Personal\" and State !~ \"Deleted\"\n| join kind=leftouter userAdmins on WorkspaceId\n| where isnull(UserAdmins)\n| project WorkspaceName, WorkspaceId, State, LastSeen\n",
+      "id": "7d6d8279-e97b-58da-bd34-cbb6ce0fb9b4",
+      "usedVariables": []
+    },
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "bef59065-7212-5ded-8a15-bfa1aff86f69"
+      },
+      "text": "RawEvents\n| where ingestion_time() > ago(1h)\n| summarize Events = count(), Latest = max(['time']),\n            AvgIngestLagSec = round(avg(datetime_diff(\"second\", ingestion_time(), ['time'])), 0) by type, source\n| order by Latest desc\n",
+      "id": "a2a19272-d1e7-5fc7-9f97-91308981f2fb",
+      "usedVariables": []
+    },
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "bef59065-7212-5ded-8a15-bfa1aff86f69"
+      },
+      "text": "RawEvents\n| where ['time'] between (_startTime .. _endTime)\n| extend Stream = case(type startswith \"Microsoft.Fabric.Capacity\", \"Capacity events\",\n                       type contains \"ItemJob\", \"Job events\",\n                       type startswith \"Microsoft.Fabric.Item\", \"Item events\",\n                       source has \"simulator\", \"Simulator\",\n                       \"Collector\")\n| summarize Events = count() by bin(['time'], 1m), Stream\n| order by ['time'] asc\n",
+      "id": "a7bae016-e023-5b2d-9924-010eb1691255",
+      "usedVariables": [
+        "_endTime",
+        "_startTime"
+      ]
+    },
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "bef59065-7212-5ded-8a15-bfa1aff86f69"
+      },
+      "text": "EstateCollectorHealth(_startTime)\n| where EventTime <= _endTime\n| order by EventTime desc\n| project EventTime, Kind, Collector, EventsSent, DurationSec, IngestLagSec, Message\n| take 200\n",
+      "id": "057d1fd5-1ca4-57c6-91dc-ef5df2b30871",
+      "usedVariables": [
+        "_endTime",
+        "_startTime"
+      ]
+    }
+  ]
+}

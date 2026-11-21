@@ -1,0 +1,181 @@
+ArtifactId,ArtifactType,ArtifactName,Workspace,OwnerUPN,LastViewedDate,Certified,SizeMB,LicenseTier
+AR0001,Report,CON Artifact 001,Retail Banking Analytics,owner01@contoso.demo,2026-03-23,0,763.2,Pro
+AR0002,Dataflow,CON Artifact 002,Legacy Reports,owner02@contoso.demo,2026-06-02,1,572.3,Pro
+AR0003,SemanticModel,CON Artifact 003,Legacy Reports,owner01@contoso.demo,2026-08-26,1,1292.5,Fabric F-SKU
+AR0004,SemanticModel,CON Artifact 004,Legacy Reports,owner02@contoso.demo,2026-02-19,1,6.4,Fabric F-SKU
+AR0005,Notebook,CON Artifact 005,Shared BI,owner03@contoso.demo,2026-08-24,0,269.2,Fabric F-SKU
+AR0006,LakehouseShortcut,CON Artifact 006,Retail Banking Analytics,owner01@contoso.demo,2026-03-17,0,908.7,Pro
+AR0007,Notebook,CON Artifact 007,Shared BI,owner04@contoso.demo,2025-11-18,1,55.3,Fabric F-SKU
+AR0008,LakehouseShortcut,CON Artifact 008,Legacy Reports,owner05@contoso.demo,2026-04-10,1,1128.5,Fabric F-SKU
+AR0009,Dataflow,CON Artifact 009,Shared BI,owner01@contoso.demo,2025-11-07,1,594.6,Pro
+AR0010,Report,CON Artifact 010,Legacy Reports,owner04@contoso.demo,2025-09-23,0,436.1,PPU
+AR0011,Notebook,CON Artifact 011,Retail Banking Analytics,owner06@contoso.demo,2026-03-27,0,797.2,Fabric F-SKU
+AR0012,SemanticModel,CON Artifact 012,Retail Banking Analytics,owner07@contoso.demo,2026-03-05,1,207.7,Fabric F-SKU
+AR0013,Notebook,CON Artifact 013,Shared BI,owner01@contoso.demo,2026-01-30,0,75.1,Fabric F-SKU
+AR0014,Dataflow,CON Artifact 014,Legacy Reports,owner07@contoso.demo,2026-05-17,0,171.6,Fabric F-SKU
+AR0015,Notebook,CON Artifact 015,Retail Banking Analytics,owner02@contoso.demo,2026-03-30,1,229.4,Fabric F-SKU
+AR0016,LakehouseShortcut,CON Artifact 016,Shared BI,owner05@contoso.demo,2026-06-03,0,215.4,Pro
+AR0017,SemanticModel,CON Artifact 017,Shared BI,owner05@contoso.demo,2026-07-06,0,774.1,Pro
+AR0018,Report,CON Artifact 018,Retail Banking Analytics,owner02@contoso.demo,2026-04-15,0,1337.3,Pro
+AR0019,Report,CON Artifact 019,Retail Banking Analytics,owner03@contoso.demo,2026-10-01,0,1321.8,Pro
+AR0020,Report,CON Artifact 020,Retail Banking Analytics,owner06@contoso.demo,2026-04-27,1,1022.3,Pro
+AR0021,SemanticModel,CON Artifact 021,Legacy Reports,owner06@contoso.demo,2025-11-29,1,569.9,Pro
+AR0022,Dataflow,CON Artifact 022,Shared BI,owner07@contoso.demo,2026-07-20,1,796,Pro
+AR0023,Notebook,CON Artifact 023,Legacy Reports,owner05@contoso.demo,2026-02-13,0,1218.7,Pro
+AR0024,Report,CON Artifact 024,Shared BI,owner02@contoso.demo,2025-11-21,0,333.7,Fabric F-SKU
+AR0025,SemanticModel,CON Artifact 025,Retail Banking Analytics,owner06@contoso.demo,2026-08-05,1,20.3,PPU
+AR0026,Dataflow,CON Artifact 026,Shared BI,owner01@contoso.demo,2025-09-21,1,5.7,Fabric F-SKU
+AR0027,LakehouseShortcut,CON Artifact 027,Retail Banking Analytics,owner02@contoso.demo,2026-01-19,0,34.1,Fabric F-SKU
+AR0028,SemanticModel,CON Artifact 028,Legacy Reports,owner02@contoso.demo,2026-05-19,1,15.6,Fabric F-SKU
+AR0029,SemanticModel,CON Artifact 029,Shared BI,owner04@contoso.demo,2026-08-23,0,425.7,Pro
+AR0030,Report,CON Artifact 030,Legacy Reports,owner02@contoso.demo,2026-10-12,1,541.6,PPU
+AR0031,SemanticModel,CON Artifact 031,Retail Banking Analytics,owner04@contoso.demo,2026-06-12,1,684.6,Pro
+AR0032,SemanticModel,CON Artifact 032,Legacy Reports,owner07@contoso.demo,2026-09-19,0,12.3,Fabric F-SKU
+AR0033,Dataflow,CON Artifact 033,Shared BI,owner07@contoso.demo,2026-08-16,0,995.6,Fabric F-SKU
+AR0034,SemanticModel,CON Artifact 034,Legacy Reports,owner01@contoso.demo,2026-10-05,1,1133.3,PPU
+AR0035,Dataflow,CON Artifact 035,Retail Banking Analytics,owner02@contoso.demo,2025-09-22,1,257.3,Pro
+AR0036,Notebook,CON Artifact 036,Retail Banking Analytics,owner03@contoso.demo,2025-10-13,1,1212.6,Pro
+AR0037,Dataflow,CON Artifact 037,Legacy Reports,owner07@contoso.demo,2026-10-02,0,335.4,Fabric F-SKU
+AR0038,Report,CON Artifact 038,Legacy Reports,owner05@contoso.demo,2026-05-02,1,1197.6,Pro
+AR0039,Dataflow,CON Artifact 039,Shared BI,owner03@contoso.demo,2026-09-29,1,719.1,Pro
+AR0040,LakehouseShortcut,CON Artifact 040,Retail Banking Analytics,owner05@contoso.demo,2025-10-12,1,1091.4,Pro
+AR0041,Dataflow,CON Artifact 041,Legacy Reports,owner05@contoso.demo,2025-09-13,1,1094.9,Fabric F-SKU
+AR0042,LakehouseShortcut,CON Artifact 042,Shared BI,owner01@contoso.demo,2025-11-24,1,1143.1,PPU
+AR0043,SemanticModel,CON Artifact 043,Retail Banking Analytics,owner07@contoso.demo,2026-06-23,0,1124,Fabric F-SKU
+AR0044,Notebook,CON Artifact 044,Legacy Reports,owner02@contoso.demo,2026-08-27,0,1373.8,Pro
+AR0045,Notebook,CON Artifact 045,Shared BI,owner05@contoso.demo,2026-02-28,0,883.5,PPU
+AR0046,LakehouseShortcut,CON Artifact 046,Retail Banking Analytics,owner02@contoso.demo,2026-01-30,0,424.6,Pro
+AR0047,LakehouseShortcut,CON Artifact 047,Legacy Reports,owner03@contoso.demo,2026-02-28,1,837.1,PPU
+AR0048,Notebook,CON Artifact 048,Shared BI,owner05@contoso.demo,2026-03-09,1,575,Fabric F-SKU
+AR0049,Report,CON Artifact 049,Shared BI,owner05@contoso.demo,2025-12-07,1,1240.2,Pro
+AR0050,Report,CON Artifact 050,Legacy Reports,owner03@contoso.demo,2026-08-28,0,154.3,PPU
+AR0051,SemanticModel,CON Artifact 051,Retail Banking Analytics,owner06@contoso.demo,2026-04-22,0,887.2,PPU
+AR0052,Report,CON Artifact 052,Legacy Reports,owner04@contoso.demo,2025-12-07,0,748.9,Pro
+AR0053,LakehouseShortcut,CON Artifact 053,Legacy Reports,owner05@contoso.demo,2025-09-08,0,854.3,Fabric F-SKU
+AR0054,Dataflow,CON Artifact 054,Retail Banking Analytics,owner06@contoso.demo,2025-11-23,0,15.3,PPU
+AR0055,Notebook,CON Artifact 055,Retail Banking Analytics,owner05@contoso.demo,2025-10-12,0,1410.8,Pro
+AR0056,Dataflow,CON Artifact 056,Retail Banking Analytics,owner05@contoso.demo,2026-03-22,1,418.8,Pro
+AR0057,LakehouseShortcut,CON Artifact 057,Legacy Reports,owner05@contoso.demo,2025-11-10,0,311,Pro
+AR0058,LakehouseShortcut,CON Artifact 058,Shared BI,owner07@contoso.demo,2026-07-29,1,1128.6,PPU
+AR0059,Notebook,CON Artifact 059,Retail Banking Analytics,owner03@contoso.demo,2025-12-07,1,172.8,Fabric F-SKU
+AR0060,Notebook,CON Artifact 060,Retail Banking Analytics,owner07@contoso.demo,2026-04-17,1,1329.5,PPU
+AR0061,Notebook,CON Artifact 061,Retail Banking Analytics,owner05@contoso.demo,2026-06-07,0,1259.9,Fabric F-SKU
+AR0062,Dataflow,CON Artifact 062,Legacy Reports,owner03@contoso.demo,2026-03-15,1,443.8,Fabric F-SKU
+AR0063,Dataflow,CON Artifact 063,Shared BI,owner07@contoso.demo,2025-12-23,0,684.6,Fabric F-SKU
+AR0064,Report,CON Artifact 064,Shared BI,owner06@contoso.demo,2026-01-22,0,199.4,PPU
+AR0065,Notebook,CON Artifact 065,Shared BI,owner02@contoso.demo,2026-07-05,0,959.7,Fabric F-SKU
+AR0066,Dataflow,CON Artifact 066,Shared BI,owner06@contoso.demo,2026-07-24,1,963.7,Pro
+AR0067,Report,CON Artifact 067,Legacy Reports,owner02@contoso.demo,2026-06-02,1,227.4,Fabric F-SKU
+AR0068,Dataflow,CON Artifact 068,Legacy Reports,owner01@contoso.demo,2026-08-22,0,1060.7,Fabric F-SKU
+AR0069,Dataflow,CON Artifact 069,Retail Banking Analytics,owner03@contoso.demo,2026-02-23,1,851.8,Pro
+AR0070,SemanticModel,CON Artifact 070,Retail Banking Analytics,owner05@contoso.demo,2026-01-16,1,1214.4,PPU
+AR0071,Report,CON Artifact 071,Legacy Reports,owner06@contoso.demo,2025-10-08,1,736.2,Pro
+AR0072,Dataflow,CON Artifact 072,Shared BI,owner01@contoso.demo,2025-09-09,1,960.1,Pro
+AR0073,Dataflow,CON Artifact 073,Shared BI,owner02@contoso.demo,2026-07-22,1,295.5,PPU
+AR0074,SemanticModel,CON Artifact 074,Retail Banking Analytics,owner06@contoso.demo,2026-10-19,0,1396.9,PPU
+AR0075,Notebook,CON Artifact 075,Retail Banking Analytics,owner06@contoso.demo,2025-10-18,0,296,Pro
+AR0076,SemanticModel,CON Artifact 076,Retail Banking Analytics,owner04@contoso.demo,2026-03-23,0,506.4,PPU
+AR0077,LakehouseShortcut,CON Artifact 077,Legacy Reports,owner02@contoso.demo,2026-09-28,1,230.2,PPU
+AR0078,LakehouseShortcut,CON Artifact 078,Shared BI,owner04@contoso.demo,2026-01-10,1,1287.3,Fabric F-SKU
+AR0079,Notebook,CON Artifact 079,Retail Banking Analytics,owner02@contoso.demo,2025-12-26,1,948.4,Pro
+AR0080,Report,CON Artifact 080,Retail Banking Analytics,owner04@contoso.demo,2025-11-08,0,1295.6,Fabric F-SKU
+AR0081,SemanticModel,CON Artifact 081,Retail Banking Analytics,owner04@contoso.demo,2026-05-16,1,54.8,Fabric F-SKU
+AR0082,SemanticModel,CON Artifact 082,Shared BI,owner06@contoso.demo,2026-05-03,1,307.3,Pro
+AR0083,Notebook,CON Artifact 083,Shared BI,owner04@contoso.demo,2025-11-30,0,445.9,Fabric F-SKU
+AR0084,LakehouseShortcut,CON Artifact 084,Legacy Reports,owner04@contoso.demo,2026-03-11,1,725.3,Pro
+AR0085,Dataflow,CON Artifact 085,Retail Banking Analytics,owner05@contoso.demo,2025-11-28,0,1087.4,Pro
+AR0086,Dataflow,CON Artifact 086,Retail Banking Analytics,owner02@contoso.demo,2026-04-15,1,1401.1,Pro
+AR0087,Notebook,CON Artifact 087,Shared BI,owner02@contoso.demo,2026-06-04,0,1291.9,Pro
+AR0088,Notebook,CON Artifact 088,Legacy Reports,owner06@contoso.demo,2026-05-08,1,1333.3,Fabric F-SKU
+AR0089,SemanticModel,CON Artifact 089,Retail Banking Analytics,owner06@contoso.demo,2026-04-28,1,1077.9,PPU
+AR0090,SemanticModel,CON Artifact 090,Legacy Reports,owner05@contoso.demo,2025-12-29,0,1300.7,Pro
+AR0091,Dataflow,CON Artifact 091,Legacy Reports,owner05@contoso.demo,2026-07-23,0,689.1,Pro
+AR0092,SemanticModel,CON Artifact 092,Legacy Reports,owner06@contoso.demo,2026-07-04,1,223.7,PPU
+AR0093,Report,CON Artifact 093,Retail Banking Analytics,owner04@contoso.demo,2025-11-07,1,682.4,Pro
+AR0094,LakehouseShortcut,CON Artifact 094,Shared BI,owner01@contoso.demo,2026-08-30,0,1005.7,PPU
+AR0095,LakehouseShortcut,CON Artifact 095,Retail Banking Analytics,owner07@contoso.demo,2026-06-02,1,1050.3,Pro
+AR0096,Report,CON Artifact 096,Legacy Reports,owner06@contoso.demo,2026-06-28,0,913.6,Pro
+AR0097,Report,CON Artifact 097,Legacy Reports,owner07@contoso.demo,2025-09-18,1,330.8,Fabric F-SKU
+AR0098,SemanticModel,CON Artifact 098,Legacy Reports,owner04@contoso.demo,2026-07-22,0,434,Pro
+AR0099,SemanticModel,CON Artifact 099,Retail Banking Analytics,owner03@contoso.demo,2026-04-14,1,857.1,Fabric F-SKU
+AR0100,Notebook,CON Artifact 100,Retail Banking Analytics,owner04@contoso.demo,2026-04-26,0,301.5,PPU
+AR0101,Notebook,CON Artifact 101,Shared BI,owner01@contoso.demo,2026-10-08,1,1260.3,Pro
+AR0102,Notebook,CON Artifact 102,Shared BI,owner04@contoso.demo,2025-10-19,0,1081.7,Pro
+AR0103,SemanticModel,CON Artifact 103,Shared BI,owner05@contoso.demo,2026-03-19,0,134.4,Fabric F-SKU
+AR0104,Dataflow,CON Artifact 104,Retail Banking Analytics,owner04@contoso.demo,2025-12-02,0,352.5,PPU
+AR0105,Notebook,CON Artifact 105,Retail Banking Analytics,owner06@contoso.demo,2026-06-06,0,439.8,Pro
+AR0106,Dataflow,CON Artifact 106,Retail Banking Analytics,owner04@contoso.demo,2026-01-01,0,1359.9,PPU
+AR0107,Notebook,CON Artifact 107,Shared BI,owner01@contoso.demo,2026-03-03,1,1157.5,Fabric F-SKU
+AR0108,LakehouseShortcut,CON Artifact 108,Retail Banking Analytics,owner03@contoso.demo,2026-05-06,0,1091.3,Pro
+AR0109,SemanticModel,CON Artifact 109,Legacy Reports,owner02@contoso.demo,2026-09-06,1,900.5,PPU
+AR0110,Report,CON Artifact 110,Shared BI,owner05@contoso.demo,2026-09-21,0,1355,Fabric F-SKU
+AR0111,Report,CON Artifact 111,Legacy Reports,owner07@contoso.demo,2025-10-19,0,362.9,Pro
+AR0112,Notebook,CON Artifact 112,Shared BI,owner06@contoso.demo,2025-12-13,0,910,Fabric F-SKU
+AR0113,SemanticModel,CON Artifact 113,Retail Banking Analytics,owner07@contoso.demo,2026-01-01,1,1371.8,PPU
+AR0114,Dataflow,CON Artifact 114,Legacy Reports,owner02@contoso.demo,2026-08-29,0,11.8,PPU
+AR0115,Report,CON Artifact 115,Legacy Reports,owner01@contoso.demo,2026-01-12,1,143.1,PPU
+AR0116,Report,CON Artifact 116,Retail Banking Analytics,owner07@contoso.demo,2025-11-23,1,31.1,PPU
+AR0117,SemanticModel,CON Artifact 117,Shared BI,owner06@contoso.demo,2026-01-27,1,926.5,PPU
+AR0118,SemanticModel,CON Artifact 118,Shared BI,owner07@contoso.demo,2025-11-26,1,302.2,Fabric F-SKU
+AR0119,Report,CON Artifact 119,Retail Banking Analytics,owner02@contoso.demo,2026-02-26,0,1058.2,Pro
+AR0120,Dataflow,CON Artifact 120,Legacy Reports,owner04@contoso.demo,2026-02-04,1,592.3,Fabric F-SKU
+AR0121,Report,CON Artifact 121,Legacy Reports,owner03@contoso.demo,2026-08-02,1,371.5,PPU
+AR0122,Report,CON Artifact 122,Shared BI,owner01@contoso.demo,2026-08-22,0,198.2,Fabric F-SKU
+AR0123,SemanticModel,CON Artifact 123,Shared BI,owner07@contoso.demo,2026-01-10,1,1086.7,Pro
+AR0124,LakehouseShortcut,CON Artifact 124,Retail Banking Analytics,owner06@contoso.demo,2025-10-30,0,400.1,Pro
+AR0125,LakehouseShortcut,CON Artifact 125,Shared BI,owner05@contoso.demo,2025-10-21,0,661.2,PPU
+AR0126,Dataflow,CON Artifact 126,Legacy Reports,owner03@contoso.demo,2026-08-16,1,421.2,PPU
+AR0127,Dataflow,CON Artifact 127,Shared BI,owner07@contoso.demo,2026-10-16,1,275.6,Fabric F-SKU
+AR0128,SemanticModel,CON Artifact 128,Legacy Reports,owner04@contoso.demo,2026-08-22,1,971.7,Pro
+AR0129,LakehouseShortcut,CON Artifact 129,Legacy Reports,owner04@contoso.demo,2026-06-06,1,661.8,Pro
+AR0130,Report,CON Artifact 130,Legacy Reports,owner03@contoso.demo,2026-05-27,1,402.8,PPU
+AR0131,Notebook,CON Artifact 131,Legacy Reports,owner07@contoso.demo,2025-12-27,0,1163.8,Fabric F-SKU
+AR0132,Notebook,CON Artifact 132,Shared BI,owner04@contoso.demo,2026-07-17,0,122.6,Fabric F-SKU
+AR0133,LakehouseShortcut,CON Artifact 133,Legacy Reports,owner04@contoso.demo,2026-03-19,1,411.8,Fabric F-SKU
+AR0134,Report,CON Artifact 134,Shared BI,owner07@contoso.demo,2025-12-07,1,256.2,PPU
+AR0135,Notebook,CON Artifact 135,Legacy Reports,owner07@contoso.demo,2026-03-08,1,590.6,PPU
+AR0136,LakehouseShortcut,CON Artifact 136,Legacy Reports,owner06@contoso.demo,2026-02-09,1,681.7,Pro
+AR0137,SemanticModel,CON Artifact 137,Legacy Reports,owner07@contoso.demo,2026-07-31,0,742.2,Fabric F-SKU
+AR0138,Report,CON Artifact 138,Shared BI,owner07@contoso.demo,2026-09-04,1,1021.1,Fabric F-SKU
+AR0139,SemanticModel,CON Artifact 139,Legacy Reports,owner04@contoso.demo,2026-02-18,1,295.3,Fabric F-SKU
+AR0140,Notebook,CON Artifact 140,Legacy Reports,owner06@contoso.demo,2025-09-24,1,471.9,Fabric F-SKU
+AR0141,Report,CON Artifact 141,Shared BI,owner07@contoso.demo,2026-10-20,1,1057.3,PPU
+AR0142,Dataflow,CON Artifact 142,Retail Banking Analytics,owner05@contoso.demo,2026-01-25,1,1190.5,PPU
+AR0143,Report,CON Artifact 143,Retail Banking Analytics,owner07@contoso.demo,2026-02-12,1,682.4,Pro
+AR0144,Notebook,CON Artifact 144,Shared BI,owner06@contoso.demo,2026-03-29,0,608.8,Pro
+AR0145,Report,CON Artifact 145,Legacy Reports,owner04@contoso.demo,2025-12-19,0,1340.6,Pro
+AR0146,Report,CON Artifact 146,Legacy Reports,owner06@contoso.demo,2025-10-13,1,543.5,Fabric F-SKU
+AR0147,LakehouseShortcut,CON Artifact 147,Retail Banking Analytics,owner07@contoso.demo,2025-10-19,0,350.4,PPU
+AR0148,Notebook,CON Artifact 148,Retail Banking Analytics,owner07@contoso.demo,2026-04-09,1,1288.4,PPU
+AR0149,LakehouseShortcut,CON Artifact 149,Legacy Reports,owner05@contoso.demo,2026-05-17,0,483.7,Fabric F-SKU
+AR0150,SemanticModel,CON Artifact 150,Legacy Reports,owner05@contoso.demo,2026-06-08,1,473.8,Fabric F-SKU
+AR0151,Report,CON Artifact 151,Legacy Reports,owner02@contoso.demo,2025-09-16,0,114.6,PPU
+AR0152,Dataflow,CON Artifact 152,Retail Banking Analytics,owner07@contoso.demo,2025-11-09,0,1303.7,Pro
+AR0153,Dataflow,CON Artifact 153,Legacy Reports,owner01@contoso.demo,2026-05-15,0,891.8,PPU
+AR0154,SemanticModel,CON Artifact 154,Shared BI,owner04@contoso.demo,2026-05-15,0,49.1,PPU
+AR0155,SemanticModel,CON Artifact 155,Shared BI,owner05@contoso.demo,2026-03-19,1,931.1,PPU
+AR0156,Dataflow,CON Artifact 156,Retail Banking Analytics,owner02@contoso.demo,2025-12-31,1,1291.4,PPU
+AR0157,SemanticModel,CON Artifact 157,Shared BI,owner03@contoso.demo,2026-05-15,0,925.9,Fabric F-SKU
+AR0158,Report,CON Artifact 158,Retail Banking Analytics,owner07@contoso.demo,2025-10-22,1,257.6,PPU
+AR0159,Report,CON Artifact 159,Retail Banking Analytics,owner03@contoso.demo,2025-12-21,0,64.5,Pro
+AR0160,Notebook,CON Artifact 160,Shared BI,owner06@contoso.demo,2026-10-18,0,1121.7,Fabric F-SKU
+AR0161,Dataflow,CON Artifact 161,Shared BI,owner06@contoso.demo,2025-09-29,1,1430.9,Fabric F-SKU
+AR0162,LakehouseShortcut,CON Artifact 162,Shared BI,owner04@contoso.demo,2025-10-19,0,908,PPU
+AR0163,SemanticModel,CON Artifact 163,Shared BI,owner06@contoso.demo,2026-05-30,0,1319.6,Fabric F-SKU
+AR0164,Report,CON Artifact 164,Legacy Reports,owner02@contoso.demo,2026-05-06,1,325.5,PPU
+AR0165,SemanticModel,CON Artifact 165,Legacy Reports,owner06@contoso.demo,2026-02-16,1,390.3,Fabric F-SKU
+AR0166,Dataflow,CON Artifact 166,Shared BI,owner07@contoso.demo,2026-03-03,0,854.8,Fabric F-SKU
+AR0167,Dataflow,CON Artifact 167,Shared BI,owner04@contoso.demo,2026-08-29,0,983.1,PPU
+AR0168,Notebook,CON Artifact 168,Retail Banking Analytics,owner02@contoso.demo,2026-04-20,1,1008.9,PPU
+AR0169,LakehouseShortcut,CON Artifact 169,Shared BI,owner07@contoso.demo,2026-06-25,1,897.2,Pro
+AR0170,Notebook,CON Artifact 170,Shared BI,owner05@contoso.demo,2026-01-04,0,1007.8,Fabric F-SKU
+AR0171,LakehouseShortcut,CON Artifact 171,Retail Banking Analytics,owner06@contoso.demo,2025-12-12,0,191.1,Pro
+AR0172,SemanticModel,CON Artifact 172,Retail Banking Analytics,owner05@contoso.demo,2026-01-27,1,1052.3,Pro
+AR0173,LakehouseShortcut,CON Artifact 173,Shared BI,owner03@contoso.demo,2026-04-06,1,593.5,Pro
+AR0174,Report,CON Artifact 174,Retail Banking Analytics,owner01@contoso.demo,2026-01-07,1,804.8,PPU
+AR0175,Report,CON Artifact 175,Retail Banking Analytics,owner03@contoso.demo,2025-11-03,1,1263.9,Fabric F-SKU
+AR0176,LakehouseShortcut,CON Artifact 176,Shared BI,owner05@contoso.demo,2025-12-05,1,373.4,PPU
+AR0177,SemanticModel,CON Artifact 177,Shared BI,owner06@contoso.demo,2026-02-13,1,201.3,Pro
+AR0178,Report,CON Artifact 178,Shared BI,owner02@contoso.demo,2025-11-04,0,735,Pro
+AR0179,Report,CON Artifact 179,Legacy Reports,owner01@contoso.demo,2025-11-22,1,1242.4,Fabric F-SKU
+AR0180,LakehouseShortcut,CON Artifact 180,Shared BI,owner05@contoso.demo,2026-07-16,1,679.6,Fabric F-SKU

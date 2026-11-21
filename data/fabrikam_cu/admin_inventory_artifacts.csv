@@ -1,0 +1,176 @@
+ArtifactId,ArtifactType,ArtifactName,Workspace,OwnerUPN,LastViewedDate,Certified,SizeMB,LicenseTier
+AR3001,Notebook,FAB Artifact 001,Shared BI,owner01@fabrikam.demo,2026-10-08,1,634.1,PPU
+AR3002,Notebook,FAB Artifact 002,Legacy Reports,owner05@fabrikam.demo,2026-02-14,0,1306.8,Fabric F-SKU
+AR3003,SemanticModel,FAB Artifact 003,Retail Banking Analytics,owner01@fabrikam.demo,2026-06-28,1,733.5,Pro
+AR3004,SemanticModel,FAB Artifact 004,Legacy Reports,owner06@fabrikam.demo,2026-02-08,0,547.2,PPU
+AR3005,LakehouseShortcut,FAB Artifact 005,Retail Banking Analytics,owner01@fabrikam.demo,2025-09-25,0,346.5,Pro
+AR3006,Report,FAB Artifact 006,Shared BI,owner01@fabrikam.demo,2026-10-21,0,1131.5,PPU
+AR3007,LakehouseShortcut,FAB Artifact 007,Legacy Reports,owner07@fabrikam.demo,2026-06-24,0,612.2,Fabric F-SKU
+AR3008,LakehouseShortcut,FAB Artifact 008,Retail Banking Analytics,owner06@fabrikam.demo,2026-08-06,0,59.7,PPU
+AR3009,Notebook,FAB Artifact 009,Retail Banking Analytics,owner05@fabrikam.demo,2026-03-27,0,144.7,Fabric F-SKU
+AR3010,Notebook,FAB Artifact 010,Retail Banking Analytics,owner04@fabrikam.demo,2025-11-25,1,699.1,Pro
+AR3011,LakehouseShortcut,FAB Artifact 011,Legacy Reports,owner06@fabrikam.demo,2026-07-28,1,840.1,Pro
+AR3012,LakehouseShortcut,FAB Artifact 012,Retail Banking Analytics,owner04@fabrikam.demo,2026-05-27,1,620.8,Fabric F-SKU
+AR3013,Notebook,FAB Artifact 013,Retail Banking Analytics,owner01@fabrikam.demo,2025-08-25,0,1016,PPU
+AR3014,SemanticModel,FAB Artifact 014,Legacy Reports,owner01@fabrikam.demo,2026-05-19,1,1212.5,PPU
+AR3015,LakehouseShortcut,FAB Artifact 015,Retail Banking Analytics,owner02@fabrikam.demo,2026-07-20,1,882.5,Fabric F-SKU
+AR3016,SemanticModel,FAB Artifact 016,Retail Banking Analytics,owner01@fabrikam.demo,2026-10-17,0,161.4,Pro
+AR3017,LakehouseShortcut,FAB Artifact 017,Legacy Reports,owner03@fabrikam.demo,2025-10-10,1,1233.4,Fabric F-SKU
+AR3018,LakehouseShortcut,FAB Artifact 018,Shared BI,owner05@fabrikam.demo,2025-09-08,1,993,Fabric F-SKU
+AR3019,Report,FAB Artifact 019,Legacy Reports,owner07@fabrikam.demo,2026-02-04,1,1067.6,Pro
+AR3020,Report,FAB Artifact 020,Legacy Reports,owner03@fabrikam.demo,2026-10-04,1,996.3,Fabric F-SKU
+AR3021,Report,FAB Artifact 021,Legacy Reports,owner02@fabrikam.demo,2026-04-22,1,496,PPU
+AR3022,Report,FAB Artifact 022,Retail Banking Analytics,owner03@fabrikam.demo,2026-05-25,1,956.6,Pro
+AR3023,LakehouseShortcut,FAB Artifact 023,Retail Banking Analytics,owner06@fabrikam.demo,2025-10-30,1,190.7,PPU
+AR3024,SemanticModel,FAB Artifact 024,Shared BI,owner04@fabrikam.demo,2026-07-24,0,25.1,Fabric F-SKU
+AR3025,LakehouseShortcut,FAB Artifact 025,Retail Banking Analytics,owner02@fabrikam.demo,2025-10-22,0,1069.7,PPU
+AR3026,SemanticModel,FAB Artifact 026,Legacy Reports,owner03@fabrikam.demo,2025-09-11,0,469.7,Pro
+AR3027,Dataflow,FAB Artifact 027,Legacy Reports,owner02@fabrikam.demo,2025-09-09,0,1133.6,Pro
+AR3028,Notebook,FAB Artifact 028,Legacy Reports,owner07@fabrikam.demo,2026-08-04,1,754.4,Pro
+AR3029,Dataflow,FAB Artifact 029,Retail Banking Analytics,owner01@fabrikam.demo,2025-11-10,0,852.3,PPU
+AR3030,Report,FAB Artifact 030,Retail Banking Analytics,owner02@fabrikam.demo,2026-06-01,1,979,Fabric F-SKU
+AR3031,Dataflow,FAB Artifact 031,Retail Banking Analytics,owner05@fabrikam.demo,2026-03-29,1,196,Pro
+AR3032,Dataflow,FAB Artifact 032,Legacy Reports,owner06@fabrikam.demo,2026-01-05,0,832.6,PPU
+AR3033,SemanticModel,FAB Artifact 033,Legacy Reports,owner05@fabrikam.demo,2026-10-06,0,412.7,Pro
+AR3034,Dataflow,FAB Artifact 034,Legacy Reports,owner03@fabrikam.demo,2025-11-19,1,1004.7,PPU
+AR3035,Dataflow,FAB Artifact 035,Legacy Reports,owner06@fabrikam.demo,2026-05-07,0,430.3,Fabric F-SKU
+AR3036,Notebook,FAB Artifact 036,Shared BI,owner02@fabrikam.demo,2026-07-07,0,1260.6,Pro
+AR3037,Report,FAB Artifact 037,Retail Banking Analytics,owner06@fabrikam.demo,2026-10-16,0,1098.4,Pro
+AR3038,SemanticModel,FAB Artifact 038,Retail Banking Analytics,owner04@fabrikam.demo,2025-09-28,0,983.5,Fabric F-SKU
+AR3039,SemanticModel,FAB Artifact 039,Shared BI,owner03@fabrikam.demo,2025-09-18,0,848.9,Pro
+AR3040,Report,FAB Artifact 040,Retail Banking Analytics,owner03@fabrikam.demo,2026-10-21,0,1272.8,Fabric F-SKU
+AR3041,Notebook,FAB Artifact 041,Legacy Reports,owner02@fabrikam.demo,2026-03-31,0,14,Fabric F-SKU
+AR3042,Notebook,FAB Artifact 042,Legacy Reports,owner04@fabrikam.demo,2026-04-27,1,428,PPU
+AR3043,Notebook,FAB Artifact 043,Shared BI,owner04@fabrikam.demo,2026-07-11,1,10,Pro
+AR3044,LakehouseShortcut,FAB Artifact 044,Legacy Reports,owner03@fabrikam.demo,2026-03-28,0,1121.9,Pro
+AR3045,Report,FAB Artifact 045,Retail Banking Analytics,owner04@fabrikam.demo,2026-08-25,1,672.9,PPU
+AR3046,Dataflow,FAB Artifact 046,Legacy Reports,owner03@fabrikam.demo,2025-12-19,1,1221.9,PPU
+AR3047,Notebook,FAB Artifact 047,Shared BI,owner05@fabrikam.demo,2026-01-26,0,1052.2,Fabric F-SKU
+AR3048,Dataflow,FAB Artifact 048,Shared BI,owner02@fabrikam.demo,2026-06-01,1,619.3,Fabric F-SKU
+AR3049,LakehouseShortcut,FAB Artifact 049,Legacy Reports,owner03@fabrikam.demo,2025-11-23,0,1003.5,Pro
+AR3050,Notebook,FAB Artifact 050,Legacy Reports,owner03@fabrikam.demo,2026-02-03,1,79.2,PPU
+AR3051,Notebook,FAB Artifact 051,Shared BI,owner02@fabrikam.demo,2026-07-28,0,1063.2,Fabric F-SKU
+AR3052,SemanticModel,FAB Artifact 052,Shared BI,owner07@fabrikam.demo,2026-08-28,0,330.1,Fabric F-SKU
+AR3053,LakehouseShortcut,FAB Artifact 053,Legacy Reports,owner07@fabrikam.demo,2026-03-26,0,576.4,Fabric F-SKU
+AR3054,Report,FAB Artifact 054,Retail Banking Analytics,owner04@fabrikam.demo,2026-03-25,0,310.4,Pro
+AR3055,SemanticModel,FAB Artifact 055,Shared BI,owner05@fabrikam.demo,2026-10-07,1,319.1,Pro
+AR3056,Notebook,FAB Artifact 056,Legacy Reports,owner07@fabrikam.demo,2025-09-21,1,182.8,PPU
+AR3057,Report,FAB Artifact 057,Retail Banking Analytics,owner03@fabrikam.demo,2026-01-22,1,636.4,Pro
+AR3058,Report,FAB Artifact 058,Retail Banking Analytics,owner02@fabrikam.demo,2025-10-20,1,773.2,Fabric F-SKU
+AR3059,Dataflow,FAB Artifact 059,Retail Banking Analytics,owner07@fabrikam.demo,2026-02-26,1,1107,Pro
+AR3060,Report,FAB Artifact 060,Shared BI,owner01@fabrikam.demo,2025-09-05,0,881.2,PPU
+AR3061,Report,FAB Artifact 061,Retail Banking Analytics,owner01@fabrikam.demo,2026-09-25,0,386.2,Fabric F-SKU
+AR3062,LakehouseShortcut,FAB Artifact 062,Shared BI,owner04@fabrikam.demo,2025-10-07,1,1188.8,Pro
+AR3063,SemanticModel,FAB Artifact 063,Legacy Reports,owner03@fabrikam.demo,2026-05-05,1,563.3,PPU
+AR3064,Notebook,FAB Artifact 064,Legacy Reports,owner03@fabrikam.demo,2026-08-16,0,736,Fabric F-SKU
+AR3065,Dataflow,FAB Artifact 065,Legacy Reports,owner05@fabrikam.demo,2026-10-18,1,729.5,Fabric F-SKU
+AR3066,Report,FAB Artifact 066,Shared BI,owner01@fabrikam.demo,2025-10-02,0,1127.5,Fabric F-SKU
+AR3067,Notebook,FAB Artifact 067,Retail Banking Analytics,owner02@fabrikam.demo,2026-02-06,1,1202.1,PPU
+AR3068,Notebook,FAB Artifact 068,Retail Banking Analytics,owner01@fabrikam.demo,2025-09-13,0,263.2,Fabric F-SKU
+AR3069,Report,FAB Artifact 069,Retail Banking Analytics,owner03@fabrikam.demo,2026-03-28,1,238.3,Fabric F-SKU
+AR3070,Notebook,FAB Artifact 070,Retail Banking Analytics,owner07@fabrikam.demo,2026-04-26,0,518.2,PPU
+AR3071,SemanticModel,FAB Artifact 071,Legacy Reports,owner01@fabrikam.demo,2026-09-02,1,926.4,PPU
+AR3072,Notebook,FAB Artifact 072,Retail Banking Analytics,owner01@fabrikam.demo,2025-11-03,1,151.8,Pro
+AR3073,Dataflow,FAB Artifact 073,Retail Banking Analytics,owner04@fabrikam.demo,2025-11-10,0,1166.5,PPU
+AR3074,Report,FAB Artifact 074,Retail Banking Analytics,owner05@fabrikam.demo,2026-09-26,1,1046.3,Pro
+AR3075,Report,FAB Artifact 075,Legacy Reports,owner04@fabrikam.demo,2026-09-04,1,88.9,Fabric F-SKU
+AR3076,Dataflow,FAB Artifact 076,Legacy Reports,owner04@fabrikam.demo,2026-04-26,0,465,PPU
+AR3077,Report,FAB Artifact 077,Shared BI,owner03@fabrikam.demo,2026-05-23,0,1069.9,PPU
+AR3078,Report,FAB Artifact 078,Shared BI,owner07@fabrikam.demo,2026-09-16,1,114.3,Pro
+AR3079,Dataflow,FAB Artifact 079,Legacy Reports,owner07@fabrikam.demo,2026-07-16,1,493.8,Fabric F-SKU
+AR3080,SemanticModel,FAB Artifact 080,Legacy Reports,owner03@fabrikam.demo,2026-02-07,0,321.4,PPU
+AR3081,Report,FAB Artifact 081,Legacy Reports,owner07@fabrikam.demo,2026-08-02,1,993.6,Fabric F-SKU
+AR3082,Notebook,FAB Artifact 082,Shared BI,owner04@fabrikam.demo,2026-09-13,1,759.9,Pro
+AR3083,Dataflow,FAB Artifact 083,Shared BI,owner03@fabrikam.demo,2026-09-07,1,1014.7,Pro
+AR3084,Report,FAB Artifact 084,Legacy Reports,owner04@fabrikam.demo,2025-09-17,1,1257.5,Fabric F-SKU
+AR3085,LakehouseShortcut,FAB Artifact 085,Legacy Reports,owner03@fabrikam.demo,2026-01-27,1,291.6,Fabric F-SKU
+AR3086,Dataflow,FAB Artifact 086,Retail Banking Analytics,owner07@fabrikam.demo,2025-10-25,0,465.4,Pro
+AR3087,SemanticModel,FAB Artifact 087,Retail Banking Analytics,owner07@fabrikam.demo,2025-11-18,1,901.7,PPU
+AR3088,Report,FAB Artifact 088,Retail Banking Analytics,owner03@fabrikam.demo,2025-10-12,0,269.3,Pro
+AR3089,Report,FAB Artifact 089,Retail Banking Analytics,owner05@fabrikam.demo,2025-09-03,1,1253.8,PPU
+AR3090,Dataflow,FAB Artifact 090,Shared BI,owner01@fabrikam.demo,2025-11-08,0,178.2,Pro
+AR3091,Dataflow,FAB Artifact 091,Retail Banking Analytics,owner04@fabrikam.demo,2026-09-30,0,72.6,Pro
+AR3092,Dataflow,FAB Artifact 092,Shared BI,owner06@fabrikam.demo,2025-10-18,0,349,Fabric F-SKU
+AR3093,LakehouseShortcut,FAB Artifact 093,Legacy Reports,owner03@fabrikam.demo,2025-12-29,0,841.2,Fabric F-SKU
+AR3094,LakehouseShortcut,FAB Artifact 094,Shared BI,owner05@fabrikam.demo,2026-06-02,0,883.2,Fabric F-SKU
+AR3095,Notebook,FAB Artifact 095,Shared BI,owner05@fabrikam.demo,2025-11-04,1,309.1,Fabric F-SKU
+AR3096,Report,FAB Artifact 096,Shared BI,owner03@fabrikam.demo,2025-12-18,0,155.2,Pro
+AR3097,Notebook,FAB Artifact 097,Shared BI,owner05@fabrikam.demo,2026-01-20,1,947.8,Pro
+AR3098,Notebook,FAB Artifact 098,Retail Banking Analytics,owner01@fabrikam.demo,2026-01-11,0,509.1,Fabric F-SKU
+AR3099,Notebook,FAB Artifact 099,Retail Banking Analytics,owner03@fabrikam.demo,2026-02-11,0,220.7,Pro
+AR3100,Report,FAB Artifact 100,Legacy Reports,owner02@fabrikam.demo,2025-11-17,0,1226.7,Fabric F-SKU
+AR3101,Dataflow,FAB Artifact 101,Retail Banking Analytics,owner07@fabrikam.demo,2025-11-27,1,1018.5,Fabric F-SKU
+AR3102,Report,FAB Artifact 102,Retail Banking Analytics,owner04@fabrikam.demo,2026-07-04,1,1134.9,Pro
+AR3103,Report,FAB Artifact 103,Retail Banking Analytics,owner03@fabrikam.demo,2026-09-29,1,137,Pro
+AR3104,SemanticModel,FAB Artifact 104,Retail Banking Analytics,owner02@fabrikam.demo,2026-04-08,1,91.3,Fabric F-SKU
+AR3105,Notebook,FAB Artifact 105,Legacy Reports,owner04@fabrikam.demo,2026-04-07,1,194.2,Fabric F-SKU
+AR3106,SemanticModel,FAB Artifact 106,Shared BI,owner07@fabrikam.demo,2026-09-06,1,41.4,PPU
+AR3107,Report,FAB Artifact 107,Retail Banking Analytics,owner05@fabrikam.demo,2026-02-20,0,1164,Fabric F-SKU
+AR3108,Notebook,FAB Artifact 108,Legacy Reports,owner06@fabrikam.demo,2025-09-09,1,1115.9,Pro
+AR3109,LakehouseShortcut,FAB Artifact 109,Retail Banking Analytics,owner05@fabrikam.demo,2026-07-16,1,1110.5,Fabric F-SKU
+AR3110,Report,FAB Artifact 110,Retail Banking Analytics,owner06@fabrikam.demo,2026-04-30,1,352.1,Fabric F-SKU
+AR3111,Notebook,FAB Artifact 111,Retail Banking Analytics,owner06@fabrikam.demo,2025-09-25,0,1049.6,Fabric F-SKU
+AR3112,Notebook,FAB Artifact 112,Retail Banking Analytics,owner04@fabrikam.demo,2026-08-02,0,150.9,PPU
+AR3113,Report,FAB Artifact 113,Shared BI,owner07@fabrikam.demo,2026-10-22,0,773.7,Fabric F-SKU
+AR3114,SemanticModel,FAB Artifact 114,Shared BI,owner07@fabrikam.demo,2026-06-24,0,714.5,Pro
+AR3115,SemanticModel,FAB Artifact 115,Retail Banking Analytics,owner04@fabrikam.demo,2025-09-24,1,1046.8,Pro
+AR3116,Dataflow,FAB Artifact 116,Legacy Reports,owner02@fabrikam.demo,2026-10-21,0,554.2,Pro
+AR3117,Notebook,FAB Artifact 117,Legacy Reports,owner05@fabrikam.demo,2026-07-03,1,376.4,PPU
+AR3118,Dataflow,FAB Artifact 118,Retail Banking Analytics,owner01@fabrikam.demo,2026-09-30,1,91.8,PPU
+AR3119,Notebook,FAB Artifact 119,Retail Banking Analytics,owner07@fabrikam.demo,2026-07-02,0,962.4,Pro
+AR3120,Report,FAB Artifact 120,Retail Banking Analytics,owner05@fabrikam.demo,2026-03-25,0,627.9,Fabric F-SKU
+AR3121,Dataflow,FAB Artifact 121,Retail Banking Analytics,owner06@fabrikam.demo,2026-02-28,0,1107.1,Pro
+AR3122,Dataflow,FAB Artifact 122,Shared BI,owner05@fabrikam.demo,2026-02-08,0,995.8,Fabric F-SKU
+AR3123,Report,FAB Artifact 123,Retail Banking Analytics,owner07@fabrikam.demo,2026-01-11,1,531.9,Fabric F-SKU
+AR3124,Notebook,FAB Artifact 124,Legacy Reports,owner02@fabrikam.demo,2025-09-24,1,1015.2,Fabric F-SKU
+AR3125,LakehouseShortcut,FAB Artifact 125,Legacy Reports,owner01@fabrikam.demo,2025-12-22,1,541.1,PPU
+AR3126,LakehouseShortcut,FAB Artifact 126,Retail Banking Analytics,owner05@fabrikam.demo,2026-09-29,0,812.5,PPU
+AR3127,LakehouseShortcut,FAB Artifact 127,Shared BI,owner07@fabrikam.demo,2026-07-31,1,539.5,Fabric F-SKU
+AR3128,LakehouseShortcut,FAB Artifact 128,Shared BI,owner04@fabrikam.demo,2025-08-23,0,346,PPU
+AR3129,SemanticModel,FAB Artifact 129,Shared BI,owner05@fabrikam.demo,2025-09-28,0,337.4,Fabric F-SKU
+AR3130,Dataflow,FAB Artifact 130,Retail Banking Analytics,owner05@fabrikam.demo,2026-02-05,0,480.5,PPU
+AR3131,Report,FAB Artifact 131,Shared BI,owner05@fabrikam.demo,2026-09-22,1,100.6,Fabric F-SKU
+AR3132,Dataflow,FAB Artifact 132,Legacy Reports,owner02@fabrikam.demo,2026-01-02,0,1235.3,Fabric F-SKU
+AR3133,SemanticModel,FAB Artifact 133,Legacy Reports,owner02@fabrikam.demo,2025-08-21,0,1145.6,Pro
+AR3134,Notebook,FAB Artifact 134,Retail Banking Analytics,owner06@fabrikam.demo,2026-01-12,0,1026.7,PPU
+AR3135,SemanticModel,FAB Artifact 135,Shared BI,owner04@fabrikam.demo,2026-03-23,0,297.2,Fabric F-SKU
+AR3136,SemanticModel,FAB Artifact 136,Retail Banking Analytics,owner01@fabrikam.demo,2025-10-16,0,1205.1,Pro
+AR3137,Notebook,FAB Artifact 137,Legacy Reports,owner04@fabrikam.demo,2025-10-05,0,227.4,PPU
+AR3138,SemanticModel,FAB Artifact 138,Legacy Reports,owner06@fabrikam.demo,2026-09-01,0,609.2,PPU
+AR3139,SemanticModel,FAB Artifact 139,Shared BI,owner01@fabrikam.demo,2026-06-16,0,178.6,Pro
+AR3140,SemanticModel,FAB Artifact 140,Retail Banking Analytics,owner01@fabrikam.demo,2026-09-23,1,1053.9,Pro
+AR3141,Notebook,FAB Artifact 141,Shared BI,owner07@fabrikam.demo,2026-09-05,1,1221.6,Fabric F-SKU
+AR3142,SemanticModel,FAB Artifact 142,Shared BI,owner03@fabrikam.demo,2026-09-29,1,1292,PPU
+AR3143,LakehouseShortcut,FAB Artifact 143,Shared BI,owner05@fabrikam.demo,2026-08-23,1,673.7,PPU
+AR3144,Notebook,FAB Artifact 144,Legacy Reports,owner07@fabrikam.demo,2025-11-05,1,49.7,Fabric F-SKU
+AR3145,Notebook,FAB Artifact 145,Shared BI,owner04@fabrikam.demo,2026-05-01,0,635.8,Pro
+AR3146,SemanticModel,FAB Artifact 146,Retail Banking Analytics,owner05@fabrikam.demo,2026-03-15,1,846.4,Pro
+AR3147,LakehouseShortcut,FAB Artifact 147,Shared BI,owner04@fabrikam.demo,2026-09-04,0,1070.9,Fabric F-SKU
+AR3148,Notebook,FAB Artifact 148,Legacy Reports,owner07@fabrikam.demo,2026-04-30,0,746.6,Pro
+AR3149,Dataflow,FAB Artifact 149,Retail Banking Analytics,owner06@fabrikam.demo,2025-09-07,1,1252.3,PPU
+AR3150,Report,FAB Artifact 150,Shared BI,owner06@fabrikam.demo,2026-02-07,0,486.2,PPU
+AR3151,Report,FAB Artifact 151,Retail Banking Analytics,owner06@fabrikam.demo,2026-02-17,1,425.2,Fabric F-SKU
+AR3152,Dataflow,FAB Artifact 152,Retail Banking Analytics,owner04@fabrikam.demo,2025-10-13,0,1181.7,Fabric F-SKU
+AR3153,Notebook,FAB Artifact 153,Shared BI,owner03@fabrikam.demo,2026-10-13,1,950.4,PPU
+AR3154,Report,FAB Artifact 154,Shared BI,owner04@fabrikam.demo,2026-01-07,1,790.3,PPU
+AR3155,LakehouseShortcut,FAB Artifact 155,Shared BI,owner04@fabrikam.demo,2025-11-01,0,401.3,Fabric F-SKU
+AR3156,Notebook,FAB Artifact 156,Legacy Reports,owner01@fabrikam.demo,2026-04-10,0,770.4,Pro
+AR3157,LakehouseShortcut,FAB Artifact 157,Shared BI,owner04@fabrikam.demo,2026-09-04,0,858.3,PPU
+AR3158,Notebook,FAB Artifact 158,Retail Banking Analytics,owner04@fabrikam.demo,2026-04-20,1,89.4,Fabric F-SKU
+AR3159,Notebook,FAB Artifact 159,Shared BI,owner06@fabrikam.demo,2026-10-08,1,259.8,Pro
+AR3160,Notebook,FAB Artifact 160,Legacy Reports,owner02@fabrikam.demo,2026-03-09,1,220.2,PPU
+AR3161,LakehouseShortcut,FAB Artifact 161,Shared BI,owner04@fabrikam.demo,2025-10-15,0,629.6,PPU
+AR3162,LakehouseShortcut,FAB Artifact 162,Legacy Reports,owner04@fabrikam.demo,2026-06-20,1,1234.6,PPU
+AR3163,SemanticModel,FAB Artifact 163,Retail Banking Analytics,owner02@fabrikam.demo,2026-08-13,0,1226.1,PPU
+AR3164,Report,FAB Artifact 164,Retail Banking Analytics,owner05@fabrikam.demo,2026-09-05,0,54.1,PPU
+AR3165,Dataflow,FAB Artifact 165,Legacy Reports,owner05@fabrikam.demo,2026-08-29,0,20.7,PPU
+AR3166,Dataflow,FAB Artifact 166,Legacy Reports,owner05@fabrikam.demo,2025-10-24,1,459.2,Fabric F-SKU
+AR3167,Notebook,FAB Artifact 167,Shared BI,owner02@fabrikam.demo,2025-10-31,0,859.6,PPU
+AR3168,LakehouseShortcut,FAB Artifact 168,Legacy Reports,owner01@fabrikam.demo,2026-04-16,0,190,Fabric F-SKU
+AR3169,Dataflow,FAB Artifact 169,Retail Banking Analytics,owner02@fabrikam.demo,2025-11-15,0,1289.1,Pro
+AR3170,Report,FAB Artifact 170,Retail Banking Analytics,owner05@fabrikam.demo,2026-07-14,1,1097.5,Pro
+AR3171,Report,FAB Artifact 171,Retail Banking Analytics,owner04@fabrikam.demo,2025-11-07,1,899.2,Pro
+AR3172,Notebook,FAB Artifact 172,Legacy Reports,owner03@fabrikam.demo,2026-03-08,0,286.8,Fabric F-SKU
+AR3173,LakehouseShortcut,FAB Artifact 173,Retail Banking Analytics,owner06@fabrikam.demo,2026-01-02,1,1065.1,Pro
+AR3174,Notebook,FAB Artifact 174,Legacy Reports,owner06@fabrikam.demo,2026-09-24,0,764.5,PPU
+AR3175,SemanticModel,FAB Artifact 175,Retail Banking Analytics,owner01@fabrikam.demo,2026-03-17,1,68,PPU

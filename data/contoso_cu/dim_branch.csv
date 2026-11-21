@@ -1,0 +1,21 @@
+BranchId,BranchName,Region,State
+BR1001,Chicago Loop,North,IL
+BR1002,Naperville,North,IL
+BR1003,Milwaukee,North,WI
+BR1004,Madison,North,WI
+BR1005,Green Bay,North,WI
+BR1006,Dallas Central,South,TX
+BR1007,Plano,South,TX
+BR1008,Austin North,South,TX
+BR1009,Houston Galleria,South,TX
+BR1010,San Antonio,South,TX
+BR1011,Denver Downtown,West,CO
+BR1012,Boulder,West,CO
+BR1013,Colorado Springs,West,CO
+BR1014,Salt Lake City,West,UT
+BR1015,Provo,West,UT
+BR1016,Atlanta Midtown,East,GA
+BR1017,Savannah,East,GA
+BR1018,Jacksonville,East,FL
+BR1019,Orlando,East,FL
+BR1020,Tampa Bay,East,FL

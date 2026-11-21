@@ -1,0 +1,53 @@
+// =====================================================================================
+// Real-Time Estate Monitor: storage
+// Run in the EstateMonitor KQL database (Eventhouse > KQL database > Explore your data).
+// Run each command block separately (select the block and press Run, or Shift+Enter).
+//
+// One raw table receives every event. All events share the CloudEvents envelope:
+//   - Native Fabric events from Real-Time hub (job, workspace item, capacity overview,
+//     capacity operation events)
+//   - Events from the Estate_Monitor_Collector notebook (inventory, access, activity log,
+//     semantic model refreshes, capacities, collector heartbeat)
+//   - Events from the Estate_Monitor_Simulator notebook (same shapes, data.simulated = true)
+// The functions in 02_Estate_Monitor_Functions.kql turn the raw events into typed views.
+// =====================================================================================
+
+.create-merge table RawEvents (
+    id: string,
+    source: string,
+    type: string,
+    subject: string,
+    ['time']: datetime,
+    specversion: string,
+    dataschemaversion: string,
+    capacityId: string,
+    data: dynamic
+)
+
+// JSON mapping used by the Eventstream destination (choose "Existing table" + this mapping)
+.create-or-alter table RawEvents ingestion json mapping "RawEvents_mapping"
+'['
+'  {"column":"id",                "path":"$.id",                "datatype":"string"},'
+'  {"column":"source",            "path":"$.source",            "datatype":"string"},'
+'  {"column":"type",              "path":"$.type",              "datatype":"string"},'
+'  {"column":"subject",           "path":"$.subject",           "datatype":"string"},'
+'  {"column":"time",              "path":"$.time",              "datatype":"datetime"},'
+'  {"column":"specversion",       "path":"$.specversion",       "datatype":"string"},'
+'  {"column":"dataschemaversion", "path":"$.dataschemaversion", "datatype":"string"},'
+'  {"column":"capacityId",        "path":"$.capacityId",        "datatype":"string"},'
+'  {"column":"data",              "path":"$.data",              "datatype":"dynamic"}'
+']'
+
+// Keep 30 days of events, all of it hot (fast) for the dashboard. Adjust to taste.
+.alter-merge table RawEvents policy retention softdelete = 30d recoverability = disabled
+
+.alter table RawEvents policy caching hot = 30d
+
+// Low-latency ingestion: streaming when the sender supports it, otherwise small batches.
+.alter table RawEvents policy streamingingestion enable
+
+.alter table RawEvents policy ingestionbatching
+'{"MaximumBatchingTimeSpan":"00:00:10","MaximumNumberOfItems":500,"MaximumRawDataSizeMB":100}'
+
+// Quick check after the first events arrive:
+// RawEvents | summarize Events = count(), Latest = max(['time']) by type, source | order by Latest desc

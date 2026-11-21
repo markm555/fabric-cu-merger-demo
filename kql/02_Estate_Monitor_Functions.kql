@@ -1,0 +1,308 @@
+// =====================================================================================
+// Real-Time Estate Monitor: typed views over RawEvents
+// Run each .create-or-alter block separately. Safe to rerun.
+// Every view has an IsSimulated column so you can hide or show simulator traffic.
+// =====================================================================================
+
+// ---------- Capacity: 30-second utilization (Capacity overview events, Summary) ----------
+.create-or-alter function with (folder = "EstateMonitor", docstring = "Capacity utilization per 30-second window")
+EstateCapacity(since: datetime) {
+    RawEvents
+    | where ['time'] >= since and type == "Microsoft.Fabric.Capacity.Summary"
+    | extend d = data
+    | extend CapacityId   = tostring(d.capacityId),
+             WindowStart  = todatetime(d.windowStartTime)
+    | summarize arg_max(['time'], *) by CapacityId, WindowStart
+    | extend CapacityName         = tostring(d.capacityName),
+             Sku                  = tostring(d.capacitySku),
+             WindowEnd            = todatetime(d.windowEndTime),
+             BaseCU               = toreal(d.baseCapacityUnits),
+             CUms                 = toreal(d.capacityUnitMs),
+             InteractiveCUms      = toreal(d.utilizationInteractive),
+             BackgroundCUms       = toreal(d.utilizationBackground),
+             InteractiveDelayPct  = toreal(d.interactiveDelayThresholdPercentage),
+             InteractiveRejectPct = toreal(d.interactiveRejectionThresholdPercentage),
+             BackgroundRejectPct  = toreal(d.backgroundRejectionThresholdPercentage),
+             CarryForwardCUms     = toreal(d.overageTotalCapacityUnitMs),
+             IsSimulated          = coalesce(tobool(d.simulated), false)
+    | extend UtilizationPct = iff(BaseCU > 0, round(CUms / (BaseCU * 1000.0 * 30) * 100, 1), real(null))
+    // A pause pushes smoothed usage into one window; drop those outliers for charting
+    | where isnull(UtilizationPct) or UtilizationPct < 500
+    | project WindowStart, WindowEnd, CapacityId, CapacityName, Sku, BaseCU, CUms, UtilizationPct,
+              InteractiveDelayPct, InteractiveRejectPct, BackgroundRejectPct,
+              InteractiveCUms, BackgroundCUms, CarryForwardCUms, IsSimulated
+}
+
+// ---------- Capacity: state changes (overloaded, paused, resumed) ----------
+.create-or-alter function with (folder = "EstateMonitor", docstring = "Capacity state transitions")
+EstateCapacityState(since: datetime) {
+    RawEvents
+    | where ['time'] >= since and type == "Microsoft.Fabric.Capacity.State"
+    | summarize arg_max(['time'], *) by id
+    | extend d = data
+    | project TransitionTime = coalesce(todatetime(d.transitionTime), ['time']),
+              CapacityId     = tostring(d.capacityId),
+              CapacityName   = tostring(d.capacityName),
+              Sku            = tostring(d.capacitySku),
+              CapacityState  = tostring(d.capacityState),
+              Reason         = tostring(d.stateChangeReason),
+              IsSimulated    = coalesce(tobool(d.simulated), false)
+}
+
+// ---------- Capacity: per-operation CU (Capacity operation events) ----------
+.create-or-alter function with (folder = "EstateMonitor", docstring = "Per-operation capacity consumption")
+EstateCapacityOperations(since: datetime) {
+    RawEvents
+    | where ['time'] >= since and type == "Microsoft.Fabric.CapacityOperationEvents.Operation"
+    | extend d = data
+    | extend OperationId = tostring(d.operationId)
+    | summarize arg_max(['time'], *) by OperationId
+    | project EventTime        = ['time'],
+              OperationId,
+              OperationStart   = todatetime(d.operationStartTime),
+              CapacityId       = tostring(d.capacityId),
+              CapacityName     = coalesce(tostring(d.capacityFriendlyName), tostring(d.capacityName)),
+              WorkspaceId      = tostring(d.workspaceId),
+              WorkspaceName    = tostring(d.workspaceName),
+              ItemId           = tostring(d.itemId),
+              ItemName         = tostring(d.itemName),
+              ItemKind         = tostring(d.itemKind),
+              OperationName    = tostring(d.operationName),
+              UtilizationType  = tostring(d.utilizationType),
+              Status           = tostring(d.status),
+              CUms             = toreal(d.capacityUnitMs),
+              DurationMs       = tolong(d.durationMs),
+              ThrottlingDelayMs= tolong(d.throttlingDelayMs),
+              Identity         = tostring(d.identityValue),
+              IdentityType     = tostring(d.identityType),
+              IsSimulated      = coalesce(tobool(d.simulated), false)
+}
+
+// ---------- Jobs: Fabric job events + semantic model refreshes from the collector ----------
+// One row per event. Use EstateJobsLatest for one row per job.
+.create-or-alter function with (folder = "EstateMonitor", docstring = "Job and refresh events, normalized")
+EstateJobs(since: datetime) {
+    RawEvents
+    | where ['time'] >= since and (type contains "ItemJob" or type == "Estate.Refresh")
+    | summarize arg_max(['time'], *) by id
+    | extend d = data, Op = tostring(split(type, ".")[-1])
+    | extend RawStatus = tostring(d.jobStatus)
+    | extend Status = case(
+            Op == "ItemJobSucceeded", "Completed",
+            Op == "ItemJobFailed" and RawStatus =~ "Cancelled", "Cancelled",
+            Op == "ItemJobFailed", "Failed",
+            RawStatus in~ ("Unknown", "Running", "InProgress", "NotStarted", "Created"), "InProgress",
+            RawStatus =~ "Completed" or RawStatus =~ "Succeeded", "Completed",
+            RawStatus =~ "Failed", "Failed",
+            RawStatus =~ "Cancelled" or RawStatus =~ "Canceled", "Cancelled",
+            Op == "ItemJobCreated", "InProgress",
+            isempty(RawStatus), "Unknown",
+            RawStatus)
+    | project EventTime     = ['time'],
+              JobId         = tostring(d.jobInstanceId),
+              WorkspaceId   = tostring(d.workspaceId),
+              WorkspaceName = tostring(d.workspaceName),
+              ItemId        = tostring(d.itemId),
+              ItemName      = tostring(d.itemName),
+              ItemKind      = tostring(d.itemKind),
+              JobType       = tostring(d.jobType),
+              InvokeType    = coalesce(tostring(d.jobInvokeType), tostring(d.jobInovkeType)),
+              Status,
+              StartTime     = todatetime(d.jobStartTime),
+              EndTime       = todatetime(d.jobEndTime),
+              ErrorMessage  = coalesce(tostring(d.errorMessage), tostring(d.failureReason), tostring(d.rootActivityErrorMessage)),
+              Origin        = iff(type == "Estate.Refresh", "Refresh history (collector)", "Fabric job events"),
+              IsSimulated   = coalesce(tobool(d.simulated), false)
+}
+
+.create-or-alter function with (folder = "EstateMonitor", docstring = "Latest state of each job")
+EstateJobsLatest(since: datetime) {
+    EstateJobs(since)
+    | where isnotempty(JobId)
+    | summarize arg_max(EventTime, *), FirstSeen = min(EventTime), AnyStart = min(StartTime) by JobId
+    | extend StartTime = coalesce(StartTime, AnyStart, FirstSeen)
+    | extend DurationSec = datetime_diff("second", coalesce(EndTime, iff(Status == "InProgress", now(), EventTime)), StartTime)
+    | project-away AnyStart
+}
+
+// ---------- Item and workspace changes ----------
+// Fabric workspace item events (native, real time; no Power BI item types) plus the
+// collector's inventory diff (all item types, including reports and semantic models).
+.create-or-alter function with (folder = "EstateMonitor", docstring = "Item and workspace change feed")
+EstateItemChanges(since: datetime) {
+    RawEvents
+    | where ['time'] >= since
+    | where (type startswith "Microsoft.Fabric.Item" and not(type contains "ItemJob")) or type startswith "Estate.Inventory."
+    | summarize arg_max(['time'], *) by id
+    | extend d = data, Op = tostring(split(type, ".")[-1])
+    | extend Change = case(
+            Op in ("ItemCreateSucceeded", "ItemCreated", "WorkspaceCreated"), "Created",
+            Op in ("ItemUpdateSucceeded", "ItemUpdated", "WorkspaceUpdated"), "Updated",
+            Op in ("ItemDeleteSucceeded", "ItemSoftDeleteSucceeded", "ItemDeleted", "WorkspaceDeleted"), "Deleted",
+            Op == "ItemRecoverSucceeded", "Recovered",
+            Op endswith "Failed", "Failed operation",
+            Op in ("ItemDiscovered", "WorkspaceDiscovered"), "Baseline",
+            Op)
+    | project EventTime     = ['time'],
+              Change,
+              Scope         = iff(Op startswith "Workspace", "Workspace", "Item"),
+              WorkspaceId   = tostring(d.workspaceId),
+              WorkspaceName = tostring(d.workspaceName),
+              ItemId        = tostring(d.itemId),
+              ItemName      = tostring(d.itemName),
+              ItemKind      = tostring(d.itemKind),
+              ChangedBy     = coalesce(tostring(d.changedBy), tostring(d.principalUpn), tostring(d.executingPrincipalId),
+                                       tostring(d.executingPricipalId), tostring(d.principalId)),
+              ChangedFields = tostring(d.changedFields),
+              Origin        = iff(type startswith "Estate.", "Inventory scan (collector)", "Fabric item events"),
+              RawType       = type,
+              IsSimulated   = coalesce(tobool(d.simulated), false)
+}
+
+// ---------- Current inventory (from the collector's scans) ----------
+.create-or-alter function with (folder = "EstateMonitor", docstring = "Current item inventory")
+EstateInventory() {
+    RawEvents
+    | where type startswith "Estate.Inventory.Item"
+    | extend d = data, ItemId = tostring(data.itemId)
+    | summarize arg_max(['time'], *) by ItemId
+    | where type != "Estate.Inventory.ItemDeleted"
+    | project LastSeen       = ['time'],
+              ItemId,
+              ItemName       = tostring(d.itemName),
+              ItemKind       = tostring(d.itemKind),
+              WorkspaceId    = tostring(d.workspaceId),
+              WorkspaceName  = tostring(d.workspaceName),
+              WorkspaceType  = tostring(d.workspaceType),
+              CapacityId     = tostring(d.capacityId),
+              State          = tostring(d.state),
+              LastUpdated    = todatetime(d.lastUpdatedDate),
+              CreatedBy      = tostring(d.createdBy),
+              IsSimulated    = coalesce(tobool(d.simulated), false)
+}
+
+.create-or-alter function with (folder = "EstateMonitor", docstring = "Current workspace inventory")
+EstateWorkspaces() {
+    RawEvents
+    | where type startswith "Estate.Inventory.Workspace"
+    | extend d = data, WorkspaceId = tostring(data.workspaceId)
+    | summarize arg_max(['time'], *) by WorkspaceId
+    | where type != "Estate.Inventory.WorkspaceDeleted"
+    | project LastSeen      = ['time'],
+              WorkspaceId,
+              WorkspaceName = tostring(d.workspaceName),
+              WorkspaceType = tostring(d.workspaceType),
+              State         = tostring(d.state),
+              CapacityId    = tostring(d.capacityId),
+              IsSimulated   = coalesce(tobool(d.simulated), false)
+}
+
+// ---------- Activity log (who did what) ----------
+.create-or-alter function with (folder = "EstateMonitor", docstring = "Power BI / Fabric activity log, categorized")
+EstateActivity(since: datetime) {
+    RawEvents
+    | where ['time'] >= since and type == "Estate.Activity"
+    | summarize arg_max(['time'], *) by id
+    | extend d = data
+    | extend Activity = tostring(d.activity)
+    | extend Category = case(
+            Activity contains "Copilot" or Activity contains "AISkill" or Activity contains "DataAgent", "AI and Copilot",
+            Activity startswith "Export" or Activity contains "Download" or Activity contains "Print"
+                or Activity in ("AnalyzeInExcel", "AnalyzedByExternalApplication"), "Export and download",
+            Activity contains "Share" or Activity contains "Access" or Activity contains "Permission"
+                or Activity contains "Member" or Activity contains "TakeOver" or Activity contains "Subscription", "Sharing and access",
+            Activity startswith "View" or Activity startswith "Read" or Activity startswith "Get"
+                or Activity == "ConnectFromExternalApplication", "Viewing and querying",
+            Activity contains "Refresh" or Activity startswith "Run" or Activity startswith "Execute"
+                or Activity contains "Schedule", "Runs and refreshes",
+            Activity contains "Deploy" or Activity contains "Git" or Activity contains "Pipeline", "Deployment and Git",
+            Activity startswith "Create" or Activity startswith "Update" or Activity startswith "Edit"
+                or Activity startswith "Delete" or Activity startswith "Rename" or Activity startswith "Import"
+                or Activity startswith "Publish" or Activity startswith "Save", "Content changes",
+            Activity contains "Tenant" or Activity contains "Capacity" or Activity contains "Admin", "Administration",
+            "Other")
+    | project EventTime     = ['time'],
+              Activity,
+              Category,
+              User          = tostring(d.userId),
+              UserType      = tostring(d.userType),
+              WorkspaceId   = tostring(d.workspaceId),
+              WorkspaceName = tostring(d.workspaceName),
+              ItemId        = tostring(d.itemId),
+              ItemName      = tostring(d.itemName),
+              ItemKind      = tostring(d.itemKind),
+              Workload      = tostring(d.workload),
+              ClientApp     = tostring(d.consumptionMethod),
+              IsSuccess     = coalesce(tobool(d.isSuccess), true),
+              ActivityId    = id,
+              IsSimulated   = coalesce(tobool(d.simulated), false)
+}
+
+// ---------- Workspace access ----------
+.create-or-alter function with (folder = "EstateMonitor", docstring = "Workspace access grants, role changes and removals")
+EstateAccessChanges(since: datetime) {
+    RawEvents
+    | where ['time'] >= since and type startswith "Estate.Access."
+    | summarize arg_max(['time'], *) by id
+    | extend d = data, Op = tostring(split(type, ".")[-1])
+    | project EventTime     = ['time'],
+              Change        = case(Op == "Discovered", "Baseline", Op),
+              WorkspaceId   = tostring(d.workspaceId),
+              WorkspaceName = tostring(d.workspaceName),
+              Principal     = tostring(d.principal),
+              PrincipalType = tostring(d.principalType),
+              Role          = tostring(d.role),
+              PreviousRole  = tostring(d.previousRole),
+              IsSimulated   = coalesce(tobool(d.simulated), false)
+}
+
+.create-or-alter function with (folder = "EstateMonitor", docstring = "Current workspace access")
+EstateAccessCurrent() {
+    RawEvents
+    | where type startswith "Estate.Access."
+    | extend d = data
+    | extend WorkspaceId = tostring(d.workspaceId), Principal = tostring(d.principal)
+    | summarize arg_max(['time'], *) by WorkspaceId, Principal
+    | where type != "Estate.Access.Removed"
+    | project LastSeen      = ['time'],
+              WorkspaceId,
+              WorkspaceName = tostring(d.workspaceName),
+              Principal,
+              PrincipalType = tostring(d.principalType),
+              Role          = tostring(d.role),
+              IsSimulated   = coalesce(tobool(d.simulated), false)
+}
+
+// ---------- Collector health ----------
+.create-or-alter function with (folder = "EstateMonitor", docstring = "Collector heartbeats and errors")
+EstateCollectorHealth(since: datetime) {
+    RawEvents
+    | where ['time'] >= since and type startswith "Estate.Collector."
+    | extend d = data
+    | project EventTime    = ['time'],
+              Kind         = tostring(split(type, ".")[-1]),
+              Collector    = tostring(d.collector),
+              EventsSent   = tolong(d.eventsSent),
+              DurationSec  = toreal(d.durationSec),
+              Message      = tostring(d.message),
+              IngestLagSec = datetime_diff("second", ingestion_time(), ['time']),
+              IsSimulated  = coalesce(tobool(d.simulated), false)
+}
+
+// ---------- Everything, one row per event (for search and drill-down) ----------
+.create-or-alter function with (folder = "EstateMonitor", docstring = "Unified timeline of all estate events")
+EstateTimeline(since: datetime) {
+    RawEvents
+    | where ['time'] >= since
+    | extend d = data
+    | project EventTime     = ['time'],
+              Type          = type,
+              Source        = source,
+              WorkspaceName = coalesce(tostring(d.workspaceName), ""),
+              ItemName      = coalesce(tostring(d.itemName), tostring(d.capacityName), ""),
+              Who           = coalesce(tostring(d.userId), tostring(d.principal), tostring(d.changedBy), tostring(d.identityValue), ""),
+              Detail        = coalesce(tostring(d.activity), tostring(d.jobStatus), tostring(d.capacityState), tostring(d.role), tostring(d.operationName), ""),
+              IngestLagSec  = datetime_diff("second", ingestion_time(), ['time']),
+              IsSimulated   = coalesce(tobool(d.simulated), false),
+              Id            = id
+}

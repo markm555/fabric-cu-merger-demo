@@ -1,0 +1,6 @@
+KPI,Definition,Owner,Calculation
+LoansBooked,Count of newly funded consumer and small-business loans in the month.,Retail Finance,SUM(FactMonthlyKPI[LoansBooked])
+DepositGrowthPct,Month-over-month percentage growth of total deposit balances.,Treasury Analytics,(CurrentMonthDeposits-PriorMonthDeposits)/PriorMonthDeposits
+NPS,Net Promoter Score from post-interaction member surveys (promoters minus detractors).,Member Experience,Promoters% - Detractors%
+DelinquencyRatePct,"Share of total loan balances 30 or more days past due, all loan products. Certified enterprise definition.",Enterprise Credit Risk,DelinquentBalance/TotalLoanBalance
+DigitalAdoptionPct,Percent of active members who used at least one digital channel in the month.,Digital Banking,DigitalActiveMembers/ActiveMembers

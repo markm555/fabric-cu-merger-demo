@@ -1,0 +1,21 @@
+BranchId,BranchName,Region,State
+BR2001,Philadelphia Center City,East,PA
+BR2002,Allentown,East,PA
+BR2003,Harrisburg,East,PA
+BR2004,Pittsburgh North,East,PA
+BR2005,Lancaster,East,PA
+BR2006,Las Vegas,West,NV
+BR2007,Henderson,West,NV
+BR2008,Reno,West,NV
+BR2009,Sparks,West,NV
+BR2010,Carson City,West,NV
+BR2011,Phoenix Midtown,South,AZ
+BR2012,Tempe,South,AZ
+BR2013,Tucson East,South,AZ
+BR2014,Albuquerque North,South,NM
+BR2015,El Paso West,South,TX
+BR2016,Minneapolis,North,MN
+BR2017,St. Paul,North,MN
+BR2018,Rochester,North,MN
+BR2019,Duluth,North,MN
+BR2020,Fargo,North,ND
